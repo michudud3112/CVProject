@@ -1,0 +1,256 @@
+import Face
+class cube:
+    def __init__(self, uface: Face , lface: Face, fface: Face, rface: Face, bface: Face, dface: Face) -> None:
+        self.uface = uface
+        self.lface = lface
+        self.fface = fface
+        self.rface = rface
+        self.bface = bface
+        self.dface = dface 
+    
+    #probably a better way to do this but I was tired
+    def showcube(self):
+        for i in range (3):
+            print("   "*3+" ",self.uface.state[i][0], self.uface.state[i][1],self.uface.state[i][2])
+        print("")
+        for i in range (3):
+            print(self.lface.state[i][0], self.lface.state[i][1],self.lface.state[i][2]," ", self.fface.state[i][0], self.fface.state[i][1],self.fface.state[i][2]," ",self.rface.state[i][0], self.rface.state[i][1],self.rface.state[i][2]," ",self.bface.state[i][0], self.bface.state[i][1],self.bface.state[i][2])
+        print("")
+        for i in range (3):
+            print("   "*3+" ",self.dface.state[i][0], self.dface.state[i][1],self.dface.state[i][2])
+    
+    #all of the moving moves are void
+    #technically there are also exist slice moves (M, E, S) and wide moves (i.e. moving two right layers at once) however since they are very uncommon and not used in the beginner layer by layer method they have been ommitted 
+    def R(self) -> None:
+        self.rface.rotateclockwise()
+        temp1,temp2,temp3 = self.fface.state[0][2],self.fface.state[1][2],self.fface.state[2][2]
+        self.fface.state[0][2],self.fface.state[1][2],self.fface.state[2][2] = self.dface.state[0][2],self.dface.state[1][2],self.dface.state[2][2]
+        self.dface.state[0][2],self.dface.state[1][2],self.dface.state[2][2] = self.bface.state[2][0],self.bface.state[1][0],self.bface.state[0][0]
+        self.bface.state[0][0],self.bface.state[1][0],self.bface.state[2][0] = self.uface.state[2][2],self.uface.state[1][2],self.uface.state[0][2]
+        self.uface.state[0][2],self.uface.state[1][2],self.uface.state[2][2] = temp1,temp2,temp3
+    
+    #p stands for prime, ie counterclockwise rotation
+    def Rp(self):
+        self.rface.rotatecounterclockwise()
+        temp1,temp2,temp3 = self.fface.state[0][2],self.fface.state[1][2],self.fface.state[2][2]
+        self.fface.state[0][2],self.fface.state[1][2],self.fface.state[2][2] = self.uface.state[0][2],self.uface.state[1][2],self.uface.state[2][2]
+        self.uface.state[0][2],self.uface.state[1][2],self.uface.state[2][2] = self.bface.state[2][0],self.bface.state[1][0],self.bface.state[0][0]
+        self.bface.state[2][0],self.bface.state[1][0],self.bface.state[0][0] = self.dface.state[0][2],self.dface.state[1][2],self.dface.state[2][2]
+        self.dface.state[0][2],self.dface.state[1][2],self.dface.state[2][2] = temp1,temp2,temp3
+        
+    #as before, this could be done by calling R() twice but this should be faster
+    def R2(self):
+        self.rface.rotate180()
+        temp1,temp2,temp3 = self.fface.state[0][2],self.fface.state[1][2],self.fface.state[2][2]
+        self.fface.state[0][2],self.fface.state[1][2],self.fface.state[2][2], self.bface.state[0][0],self.bface.state[1][0], self.bface.state[2][0] = self.bface.state[2][0],self.bface.state[1][0],self.bface.state[0][0],temp3,temp2,temp1
+        temp1,temp2,temp3 = self.uface.state[0][2],self.uface.state[1][2],self.uface.state[2][2]
+        self.uface.state[0][2],self.uface.state[1][2],self.uface.state[2][2],self.dface.state[0][2],self.dface.state[1][2],self.dface.state[2][2] = self.dface.state[0][2],self.dface.state[1][2],self.dface.state[2][2],temp1,temp2,temp3
+    
+    def L(self):
+        self.lface.rotateclockwise()
+        temp1,temp2,temp3 = self.fface.state[0][0],self.fface.state[1][0],self.fface.state[2][0]
+        self.fface.state[0][0],self.fface.state[1][0],self.fface.state[2][0] = self.uface.state[0][0],self.uface.state[1][0],self.uface.state[2][0]
+        self.uface.state[0][0],self.uface.state[1][0],self.uface.state[2][0] = self.bface.state[2][2],self.bface.state[1][2],self.bface.state[0][2]
+        self.bface.state[0][2],self.bface.state[1][2],self.bface.state[2][2] = self.dface.state[2][0],self.dface.state[1][0],self.dface.state[0][0]
+        self.dface.state[0][0],self.dface.state[1][0],self.dface.state[2][0] = temp1,temp2,temp3
+        
+    def Lp(self):
+        self.lface.rotatecounterclockwise()
+        temp1,temp2,temp3 = self.fface.state[0][0],self.fface.state[1][0],self.fface.state[2][0]
+        self.fface.state[0][0],self.fface.state[1][0],self.fface.state[2][0] = self.dface.state[0][0],self.dface.state[1][0],self.dface.state[2][0]
+        self.dface.state[0][0],self.dface.state[1][0],self.dface.state[2][0] = self.bface.state[2][2],self.bface.state[1][2],self.bface.state[0][2]
+        self.bface.state[0][2],self.bface.state[1][2],self.bface.state[2][2] = self.uface.state[2][0],self.uface.state[1][0],self.uface.state[0][0]
+        self.uface.state[0][0],self.uface.state[1][0],self.uface.state[2][0] = temp1,temp2,temp3
+        
+    def L2(self):
+        self.lface.rotate180()
+        temp1,temp2,temp3 = self.fface.state[0][0],self.fface.state[1][0],self.fface.state[2][0]
+        self.fface.state[0][0],self.fface.state[1][0],self.fface.state[2][0], self.bface.state[0][2],self.bface.state[1][2], self.bface.state[2][2] = self.bface.state[2][2],self.bface.state[1][2],self.bface.state[0][2],temp3,temp2,temp1
+        temp1,temp2,temp3 = self.uface.state[0][0],self.uface.state[1][0],self.uface.state[2][0]
+        self.uface.state[0][0],self.uface.state[1][0],self.uface.state[2][0],self.dface.state[0][0],self.dface.state[1][0],self.dface.state[2][0] = self.dface.state[0][0],self.dface.state[1][0],self.dface.state[2][0],temp1,temp2,temp3
+    
+    def U(self):
+        self.uface.rotateclockwise()
+        temp1, temp2, temp3 = self.fface.state[0][0], self.fface.state[0][1], self.fface.state[0][2]
+        self.fface.state[0][0], self.fface.state[0][1], self.fface.state[0][2] = self.rface.state[0][0], self.rface.state[0][1], self.rface.state[0][2]
+        self.rface.state[0][0], self.rface.state[0][1], self.rface.state[0][2] = self.bface.state[0][0], self.bface.state[0][1], self.bface.state[0][2]
+        self.bface.state[0][0], self.bface.state[0][1], self.bface.state[0][2] = self.lface.state[0][0], self.lface.state[0][1], self.lface.state[0][2]
+        self.lface.state[0][0], self.lface.state[0][1], self.lface.state[0][2] = temp1,temp2,temp3
+    
+    def Up(self):
+        self.uface.rotatecounterclockwise()
+        temp1, temp2, temp3 = self.fface.state[0][0], self.fface.state[0][1], self.fface.state[0][2]
+        self.fface.state[0][0], self.fface.state[0][1], self.fface.state[0][2] = self.lface.state[0][0], self.lface.state[0][1], self.lface.state[0][2]
+        self.lface.state[0][0], self.lface.state[0][1], self.lface.state[0][2] = self.bface.state[0][0], self.bface.state[0][1], self.bface.state[0][2]
+        self.bface.state[0][0], self.bface.state[0][1], self.bface.state[0][2] = self.rface.state[0][0], self.rface.state[0][1], self.rface.state[0][2]
+        self.rface.state[0][0], self.rface.state[0][1], self.rface.state[0][2] = temp1,temp2,temp3
+    
+    def U2(self):
+        self.uface.rotate180()
+        temp1, temp2, temp3 = self.fface.state[0][0], self.fface.state[0][1], self.fface.state[0][2]
+        self.fface.state[0][0], self.fface.state[0][1], self.fface.state[0][2],self.bface.state[0][0], self.bface.state[0][1], self.bface.state[0][2] = self.bface.state[0][0], self.bface.state[0][1], self.bface.state[0][2], temp1, temp2, temp3
+        temp1, temp2, temp3 = self.lface.state[0][0], self.lface.state[0][1], self.lface.state[0][2]
+        self.lface.state[0][0], self.lface.state[0][1], self.lface.state[0][2],self.rface.state[0][0], self.rface.state[0][1], self.rface.state[0][2] = self.rface.state[0][0], self.rface.state[0][1], self.rface.state[0][2], temp1, temp2, temp3
+
+    def D(self):
+        self.dface.rotateclockwise()
+        temp1, temp2, temp3 = self.fface.state[2][0], self.fface.state[2][1], self.fface.state[2][2]
+        self.fface.state[2][0], self.fface.state[2][1], self.fface.state[2][2] = self.lface.state[2][0], self.lface.state[2][1], self.lface.state[2][2]
+        self.lface.state[2][0], self.lface.state[2][1], self.lface.state[2][2] = self.bface.state[2][0], self.bface.state[2][1], self.bface.state[2][2]
+        self.bface.state[2][0], self.bface.state[2][1], self.bface.state[2][2] = self.rface.state[2][0], self.rface.state[2][1], self.rface.state[2][2]
+        self.rface.state[2][0], self.rface.state[2][1], self.rface.state[2][2] = temp1,temp2,temp3
+    
+    def Dp(self):
+        self.dface.rotatecounterclockwise()
+        temp1, temp2, temp3 = self.fface.state[2][0], self.fface.state[2][1], self.fface.state[2][2]
+        self.fface.state[2][0], self.fface.state[2][1], self.fface.state[2][2] = self.rface.state[2][0], self.rface.state[2][1], self.rface.state[2][2]
+        self.rface.state[2][0], self.rface.state[2][1], self.rface.state[2][2] = self.bface.state[2][0], self.bface.state[2][1], self.bface.state[2][2]
+        self.bface.state[2][0], self.bface.state[2][1], self.bface.state[2][2] = self.lface.state[2][0], self.lface.state[2][1], self.lface.state[2][2]
+        self.lface.state[2][0], self.lface.state[2][1], self.lface.state[2][2] = temp1,temp2,temp3
+    
+    def D2(self):
+        self.uface.rotate180()
+        temp1, temp2, temp3 = self.fface.state[2][0], self.fface.state[2][1], self.fface.state[2][2]
+        self.fface.state[2][0], self.fface.state[2][1], self.fface.state[2][2],self.bface.state[2][0], self.bface.state[2][1], self.bface.state[2][2] = self.bface.state[2][0], self.bface.state[2][1], self.bface.state[2][2], temp1, temp2, temp3
+        temp1, temp2, temp3 = self.lface.state[2][0], self.lface.state[2][1], self.lface.state[2][2]
+        self.lface.state[2][0], self.lface.state[2][1], self.lface.state[2][2],self.rface.state[2][0], self.rface.state[2][1], self.rface.state[2][2] = self.rface.state[2][0], self.rface.state[2][1], self.rface.state[2][2], temp1, temp2, temp3
+    
+    def F(self):
+        self.fface.rotateclockwise()
+        temp1,temp2,temp3 = self.uface.state[2][0], self.uface.state[2][1], self.uface.state[2][2]
+        self.uface.state[2][0], self.uface.state[2][1], self.uface.state[2][2] = self.lface.state[2][2],self.lface.state[1][2],self.lface.state[0][2]
+        self.lface.state[0][2],self.lface.state[1][2],self.lface.state[2][2] = self.dface.state[0][0], self.dface.state[0][1], self.dface.state[0][2]
+        self.dface.state[0][0], self.dface.state[0][1], self.dface.state[0][2] = self.rface.state[2][0], self.rface.state[1][0], self.rface.state[0][0]
+        self.rface.state[0][0], self.rface.state[1][0], self.rface.state[2][0] = temp1,temp2,temp3
+    
+    def Fp(self):
+        self.fface.rotatecounterclockwise()
+        temp1,temp2,temp3 = self.uface.state[2][0], self.uface.state[2][1], self.uface.state[2][2]
+        self.uface.state[2][0], self.uface.state[2][1], self.uface.state[2][2] = self.rface.state[0][0],self.rface.state[1][0],self.rface.state[2][0]
+        self.rface.state[0][0],self.rface.state[1][0],self.rface.state[2][0] = self.dface.state[0][2], self.dface.state[0][1], self.dface.state[0][0]
+        self.dface.state[0][0], self.dface.state[0][1], self.dface.state[0][2] = self.lface.state[0][2], self.lface.state[1][2], self.lface.state[2][2]
+        self.lface.state[0][2], self.lface.state[1][2], self.lface.state[2][2] = temp3,temp2,temp1
+    
+    def F2(self):
+        self.fface.rotate180()
+        temp1,temp2,temp3 = self.uface.state[2][0], self.uface.state[2][1], self.uface.state[2][2]
+        self.uface.state[2][0], self.uface.state[2][1], self.uface.state[2][2], self.dface.state[0][0], self.dface.state[0][1], self.dface.state[0][2] = self.dface.state[0][2], self.dface.state[0][1], self.dface.state[0][0], temp3,temp2,temp1
+        temp1,temp2,temp3 = self.rface.state[0][0],self.rface.state[1][0],self.rface.state[2][0]
+        self.rface.state[0][0],self.rface.state[1][0],self.rface.state[2][0], self.lface.state[0][2], self.lface.state[1][2], self.lface.state[2][2] = self.lface.state[2][2], self.lface.state[1][2], self.lface.state[0][2], temp3,temp2,temp1
+    
+    def B(self):
+        self.bface.rotateclockwise()
+        temp1,temp2,temp3 = self.uface.state[0][0], self.uface.state[0][1], self.uface.state[0][2]
+        self.uface.state[0][0], self.uface.state[0][1], self.uface.state[0][2] = self.rface.state[0][2],self.rface.state[1][2],self.rface.state[2][2]
+        self.rface.state[0][2],self.rface.state[1][2],self.rface.state[2][2] = self.dface.state[2][2], self.dface.state[2][1], self.dface.state[2][0]
+        self.dface.state[2][0], self.dface.state[2][1], self.dface.state[2][2] = self.lface.state[0][0], self.lface.state[1][0], self.lface.state[2][0]
+        self.lface.state[0][0], self.lface.state[1][0], self.lface.state[2][0] = temp3,temp2,temp1
+        
+    def Bp(self):
+        self.bface.rotatecounterclockwise()
+        temp1,temp2,temp3 = self.uface.state[0][0], self.uface.state[0][1], self.uface.state[0][2]
+        self.uface.state[0][0], self.uface.state[0][1], self.uface.state[0][2] = self.lface.state[2][0],self.lface.state[1][0],self.lface.state[0][0]
+        self.lface.state[0][0],self.lface.state[1][0],self.lface.state[2][0] = self.dface.state[2][0], self.dface.state[2][1], self.dface.state[2][2]
+        self.dface.state[2][0], self.dface.state[2][1], self.dface.state[2][2] = self.rface.state[2][2], self.rface.state[1][2], self.rface.state[0][2]
+        self.rface.state[0][2], self.rface.state[1][2], self.rface.state[2][2] = temp1,temp2,temp3
+    
+    def B2(self):
+        self.bface.rotate180()
+        temp1,temp2,temp3 = self.uface.state[0][0], self.uface.state[0][1], self.uface.state[0][2]
+        self.uface.state[0][0], self.uface.state[0][1], self.uface.state[0][2], self.dface.state[2][0], self.dface.state[2][1], self.dface.state[2][2] = self.dface.state[2][2], self.dface.state[2][1], self.dface.state[2][0], temp3,temp2,temp1
+        temp1,temp2,temp3 = self.rface.state[0][2],self.rface.state[1][2],self.rface.state[2][2]
+        self.rface.state[0][2],self.rface.state[1][2],self.rface.state[2][2], self.lface.state[0][0], self.lface.state[1][0], self.lface.state[2][0] = self.lface.state[2][0], self.lface.state[1][0], self.lface.state[0][0], temp3,temp2,temp1
+
+    def x(self):
+        temp = self.uface
+        self.uface = self.fface
+        self.fface = self.dface
+        self.bface.rotate180()
+        self.dface = self.bface
+        temp.rotate180()
+        self.bface = temp
+        self.lface.rotatecounterclockwise()
+        self.rface.rotateclockwise()
+    
+    def xp(self):
+        temp = self.dface
+        self.dface = self.fface
+        self.fface = self.uface
+        self.bface.rotate180()
+        self.uface = self.bface
+        temp.rotate180()
+        self.bface = temp
+        self.rface.rotatecounterclockwise()
+        self.lface.rotateclockwise()
+    
+    def x2(self):
+        temp = self.dface
+        self.dface,self.uface = self.uface,temp
+        self.bface.rotate180()
+        self.fface.rotate180()
+        temp = self.bface
+        self.bface,self.fface = self.fface,temp
+        self.rface.rotate180()
+        self.lface.rotate180()
+    
+    def y(self):
+        temp = self.fface
+        self.fface, self.rface,self.bface,self.lface = self.rface,self.bface,self.lface, temp
+        self.uface.rotateclockwise()
+        self.dface.rotatecounterclockwise()
+        
+    def yp(self):
+        temp = self.fface
+        self.fface, self.lface,self.bface,self.rface = self.lface,self.bface,self.rface, temp
+        self.dface.rotateclockwise()
+        self.uface.rotatecounterclockwise()
+        
+    def y2 (self):
+        temp = self.fface
+        self.fface,self.bface = self.bface,temp
+        temp = self.lface
+        self.lface,self.rface = self.rface,temp
+        self.dface.rotate180()
+        self.uface.rotate180()
+      
+    #probably won't be used much but in case it is I'll add it  
+    def z(self):
+        temp = self.uface
+        self.lface.rotateclockwise()
+        self.uface = self.lface
+        self.dface.rotateclockwise()
+        self.lface = self.dface
+        self.rface.rotateclockwise()
+        self.dface = self.rface
+        temp.rotateclockwise()
+        self.rface = temp
+        self.fface.rotateclockwise()
+        self.bface.rotatecounterclockwise()   
+         
+    def zp(self):
+        temp = self.uface
+        self.rface.rotatecounterclockwise()
+        self.uface = self.rface
+        self.dface.rotatecounterclockwise()
+        self.rface = self.dface
+        self.lface.rotatecounterclockwise()
+        self.dface = self.lface
+        temp.rotatecounterclockwise()
+        self.lface = temp
+        self.bface.rotateclockwise()
+        self.fface.rotatecounterclockwise()
+        
+    def z2(self):
+        temp = self.uface
+        self.dface.rotate180()
+        self.uface = self.dface
+        temp.rotate180()
+        self.dface = temp
+        temp = self.lface
+        self.rface.rotate180()
+        self.lface = self.rface
+        temp.rotate180()
+        self.rface = temp        
+        self.bface.rotate180()
+        self.fface.rotate180()
+        
