@@ -3,12 +3,12 @@ import Face
 import cube
 #cube
 # for testing - 1 is white, 2 is orange, 3 is green, 4 is red, 5 is blue, 6 is yellow
-uface = Face.face([[5,5,3],[3,6,3],[6,2,4]])
-lface = Face.face([[6,2,2],[6,4,4],[4,4,4]])
-fface = Face.face([[5,6,3],[6,3,4],[3,3,3]])
-rface = Face.face([[6,6,2],[5,2,4],[2,2,2]])
-bface = Face.face([[6,2,4],[3,5,5],[5,5,5]])
-dface = Face.face([[1,1,1],[1,1,1],[1,1,1]])
+uface = Face.face([[2,1,1],[1,6,1],[3,1,6]])
+lface = Face.face([[1,5,2],[5,4,4],[2,3,5]])
+fface = Face.face([[6,3,2],[6,3,3],[4,5,4]])
+rface = Face.face([[5,4,3],[4,2,6],[6,3,6]])
+bface = Face.face([[4,2,3],[2,5,2],[4,5,1]])
+dface = Face.face([[1,4,3],[2,1,6],[5,6,5]])
 
 #pieces with unique IDs to verify correctness of various moves
 #uface = Face.face([[11,12,13],[14,15,16],[17,18,19]])
