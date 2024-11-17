@@ -10,15 +10,15 @@ class cube:
         self.moves = moves
     
     #probably a better way to do this but I was tired
-    def showcube(self):
+    def show_cube(self):
         for i in range (3):
-            print("   "*3+" ",self.uface.state[i][0], self.uface.state[i][1],self.uface.state[i][2])
+            print("  "*3+" ",self.uface.state[i][0], self.uface.state[i][1],self.uface.state[i][2])
         print("")
         for i in range (3):
             print(self.lface.state[i][0], self.lface.state[i][1],self.lface.state[i][2]," ", self.fface.state[i][0], self.fface.state[i][1],self.fface.state[i][2]," ",self.rface.state[i][0], self.rface.state[i][1],self.rface.state[i][2]," ",self.bface.state[i][0], self.bface.state[i][1],self.bface.state[i][2])
         print("")
         for i in range (3):
-            print("   "*3+" ",self.dface.state[i][0], self.dface.state[i][1],self.dface.state[i][2])
+            print("  "*3+" ",self.dface.state[i][0], self.dface.state[i][1],self.dface.state[i][2])
     
     #all of the moving moves are void
     #technically there are also exist slice moves (M, E, S) and wide moves (i.e. moving two right layers at once) however since they are very uncommon and not used in the beginner layer by layer method they have been ommitted 
