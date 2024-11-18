@@ -1,10 +1,11 @@
 class solver:
     '''This class will contain a Solver for the cube.'''
-    #To DO:
-    #implement daisy maker
-    #improve f2l
-    #improve cross aligner
-    #improve is top right correct method
+    # To DO:
+    # implement daisy maker
+    # improve f2l
+    # improve cross aligner
+    # improve is top right correct method
+
     def __init__(self, cube) -> None:
         self.cube = cube
 
@@ -114,10 +115,96 @@ class solver:
             return True
         return False
 
+    def is_edge_in_bottom_layer(self) -> bool:
+        '''Method used for looking for a piece in the bottom layer'''
+        if self.cube.dface.state[2][1] == self.cube.dface.state[1][1]:
+            return True
+        elif self.cube.dface.state[0][1] == self.cube.dface.state[1][1]:
+            return True
+        elif self.cube.dface.state[1][0] == self.cube.dface.state[1][1]:
+            return True
+        elif self.cube.dface.state[1][2] == self.cube.dface.state[1][1]:
+            return True
+        return False
+
+    def is_edge_on_bottom_ring(self):
+        '''Method used for looking for a piece in the bottom row of the f,r,b and l faces'''
+        if self.cube.fface.state[2][1] == self.cube.dface.state[1][1]:
+            return True
+        elif self.cube.rface.state[2][1] == self.cube.dface.state[1][1]:
+            return True
+        elif self.cube.bface.state[2][1] == self.cube.dface.state[1][1]:
+            return True
+        elif self.cube.lface.state[2][1] == self.cube.dface.state[1][1]:
+            return True
+        return False
+
     def make_a_daisy(self):
         '''Starts with an unsolved cube, solves a daisy'''
         self.cube.moves += "Solving the daisy: "
-        
+        for i in range(4):
+            if self.cube.uface.state[1][2] == self.cube.dface.state[1][1]:
+                self.cube.Up()
+            elif self.is_edge_in_bottom_layer():
+                while self.cube.dface.state[1][2] != self.cube.dface.state[1][1]:
+                    self.cube.D()
+                self.cube.R2()
+                self.cube.Up()
+            elif self.cube.fface.state[1][2] == self.cube.dface.state[1][1]:
+                self.cube.R()
+                self.cube.Up()
+            elif self.cube.fface.state[1][0] == self.cube.dface.state[1][1]:
+                self.cube.U2()
+                self.cube.Lp()
+                self.cube.U()
+            elif self.cube.rface.state[1][0] == self.cube.dface.state[1][1]:
+                self.cube.U()
+                self.cube.Fp()
+                self.cube.U2()
+            elif self.cube.rface.state[1][2] == self.cube.dface.state[1][1]:
+                self.cube.Up()
+                self.cube.B()
+            elif self.cube.bface.state[1][0] == self.cube.dface.state[1][1]:
+                self.cube.Rp()
+                self.cube.Up()
+            elif self.cube.bface.state[1][2] == self.cube.dface.state[1][1]:
+                self.cube.U2()
+                self.cube.L()
+                self.cube.U()
+            elif self.cube.lface.state[1][0] == self.cube.dface.state[1][1]:
+                self.cube.Up()
+                self.cube.Bp()
+            elif self.cube.lface.state[1][2] == self.cube.dface.state[1][1]:
+                self.cube.U()
+                self.cube.F()
+                self.cube.U2()
+            elif self.is_edge_on_bottom_ring():
+                while self.cube.fface.state[2][1] != self.cube.dface.state[1][1]:
+                    self.cube.D()
+                self.cube.U()
+                self.cube.Fp()
+                self.cube.Up()
+                self.cube.R()
+                self.cube.Up()
+            elif self.cube.rface.state[1][0] == self.cube.dface.state[1][1]:
+                self.cube.R()
+                self.cube.Up()
+                self.cube.B()
+            elif self.cube.bface.state[1][0] == self.cube.dface.state[1][1]:
+                self.cube.Bp()
+                self.cube.Rp()
+                self.cube.Up()
+            elif self.cube.lface.state[1][0] == self.cube.dface.state[1][1]:
+                self.cube.L()
+                self.cube.U()
+                self.cube.F()
+                self.cube.U2()
+            elif self.cube.fface.state[1][0] == self.cube.dface.state[1][1]:
+                self.cube.F()
+                self.cube.R()
+                self.cube.Up()
+            
+
     def daisy_to_cross(self):
         '''Starts with a daisy, solves the cross on the first face'''
         self.cube.moves += "\n Solving the cross on the bottom: "
@@ -183,9 +270,10 @@ class solver:
                             self.cube.R()
                             self.cube.U()
                             self.cube.Rp()
-                        self.cube.y()
                     else:
                         self.cube.U()
+                self.cube.y()
+
 
     def find_and_insert_f2l(self, colors):
         '''This method finds the correct edge piece for the
@@ -202,8 +290,8 @@ class solver:
                     self.cube.Up()
                     self.insert_f2l_left()
                     self.cube.yp()
-            self.cube.U()
-
+            else:
+                self.cube.U()
 
     def remove_f2l_from_wrong_slot(self, colors):
         '''Sometimes, an edge piece can be "stuck" in the wrong slot when solvign the F2L. This method allows to remove
@@ -221,7 +309,6 @@ class solver:
                     self.cube.y()
             else:
                 self.cube.y()
-
 
     def solve_f2l(self):
         '''This method start with a solved first layer and solves the middle layer'''
@@ -386,20 +473,24 @@ class solver:
 
     def solve(self):
         '''Main method of the solver class'''
-        #self.make_a_daisy()
-        #print("Solving the daisy")
+        print("Solving the daisy")
+        self.make_a_daisy()
+        self.cube.show_cube()
+        print("Solving the cross on the bottom")
         self.daisy_to_cross()
-        #print("Solving bottom corners")
+        self.cube.show_cube()
+        print(self.cube.moves)
+        print("Solving bottom corners")
         self.corners_bottom_layer()
-        #print("solve f2l")
+        print("solve f2l")
         self.solve_f2l()
-        #print("cross")
+        print("cross")
         self.solve_cross()
-        #print("adjust cross")
+        print("adjust cross")
         self.adjust_cross()
-        #print("move corners")
+        print("move corners")
         self.move_corners()
-        #print("rotate corners")
+        print("rotate corners")
         self.rotate_corners()
         self.cube.moves += "Solved!"
         print(self.cube.moves)
