@@ -1,6 +1,6 @@
 import Face
 class cube:
-    def __init__(self, uface: Face , lface: Face, fface: Face, rface: Face, bface: Face, dface: Face, moves:str) -> None:
+    def __init__(self, uface: Face, lface: Face, fface: Face, rface: Face, bface: Face, dface: Face, moves:str) -> None:
         self.uface = uface
         self.lface = lface
         self.fface = fface
