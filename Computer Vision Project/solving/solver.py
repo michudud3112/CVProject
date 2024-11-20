@@ -111,7 +111,7 @@ class solver:
             return True
         if self.cube.bface.state[2][2] in colors and self.cube.lface.state[2][0] in colors and self.cube.dface.state[2][0] in colors:
             return True
-        if self.cube.lface.state[2][2] in colors and self.cube.fface.state[0][2] in colors and self.cube.dface.state[0][0] in colors:
+        if self.cube.lface.state[2][2] in colors and self.cube.fface.state[2][0] in colors and self.cube.dface.state[0][0] in colors:
             return True
         return False
 
@@ -186,7 +186,7 @@ class solver:
                 self.cube.Up()
                 self.cube.R()
                 self.cube.Up()
-            elif self.cube.rface.state[1][0] == self.cube.dface.state[1][1]:
+            elif self.cube.rface.state[0][1] == self.cube.dface.state[1][1]:
                 self.cube.R()
                 self.cube.Up()
                 self.cube.B()
@@ -194,12 +194,12 @@ class solver:
                 self.cube.Bp()
                 self.cube.Rp()
                 self.cube.Up()
-            elif self.cube.lface.state[1][0] == self.cube.dface.state[1][1]:
+            elif self.cube.lface.state[0][1] == self.cube.dface.state[1][1]:
                 self.cube.L()
                 self.cube.U()
                 self.cube.F()
                 self.cube.U2()
-            elif self.cube.fface.state[1][0] == self.cube.dface.state[1][1]:
+            elif self.cube.fface.state[0][1] == self.cube.dface.state[1][1]:
                 self.cube.F()
                 self.cube.R()
                 self.cube.Up()
@@ -342,14 +342,13 @@ class solver:
                 self.cube.Up()
                 self.make_a_cross()
                 return
-            elif self.cube.uface.state[1][0] == self.cube.uface.state[1][1]:
+            if self.cube.uface.state[1][0] == self.cube.uface.state[1][1]:
                 self.make_a_cross()
                 self.make_a_cross()
-                return
-            else:
-                self.cube.U()
-                self.make_a_cross()
-                self.make_a_cross()
+                return          
+            self.cube.Up()
+            self.make_a_cross()
+            self.make_a_cross()
         else:
             if self.cube.uface.state[1][0] == self.cube.uface.state[1][1]:
                 if self.cube.uface.state[1][2] == self.cube.uface.state[1][1]:
@@ -368,15 +367,16 @@ class solver:
         self.cube.moves += "\n Aligning the cross: "
         # check if this step is necessary
         checks = 0
+        self.cube.moves += "Checking if it's already aligned: "
         while checks < 4:
             if self.cube.fface.state[0][1] == self.cube.fface.state[1][1] and self.cube.rface.state[0][1] == self.cube.rface.state[1][1] and self.cube.bface.state[0][1] == self.cube.bface.state[1][1]:
                 return
             self.cube.U()
             checks += 1
+        self.cube.moves += "Aligning for algorithm: "
         aligned = False
         count = 0
         while not aligned:
-            self.cube.U()
             count += 1
             numberofpiecesaligned = 0
             if self.cube.fface.state[0][1] == self.cube.fface.state[1][1]:
@@ -389,6 +389,8 @@ class solver:
                 numberofpiecesaligned += 1
             if numberofpiecesaligned == 2:
                 aligned = True
+            else:
+                self.cube.U()
 
         if self.cube.fface.state[0][1] != self.cube.fface.state[1][1]:
             if self.cube.bface.state[0][1] != self.cube.bface.state[1][1]:
@@ -473,24 +475,21 @@ class solver:
 
     def solve(self):
         '''Main method of the solver class'''
-        print("Solving the daisy")
+        #print("Solving the daisy")
         self.make_a_daisy()
-        self.cube.show_cube()
-        print("Solving the cross on the bottom")
+        #print("Solving the cross on the bottom")
         self.daisy_to_cross()
-        self.cube.show_cube()
-        print(self.cube.moves)
-        print("Solving bottom corners")
+        #print("Solving bottom corners")
         self.corners_bottom_layer()
-        print("solve f2l")
+        #print("solve f2l")
         self.solve_f2l()
-        print("cross")
+        #print("cross")
         self.solve_cross()
-        print("adjust cross")
+        #print("adjust cross")
         self.adjust_cross()
-        print("move corners")
+        #print("move corners")
         self.move_corners()
-        print("rotate corners")
+        #print("rotate corners")
         self.rotate_corners()
         self.cube.moves += "Solved!"
         print(self.cube.moves)
