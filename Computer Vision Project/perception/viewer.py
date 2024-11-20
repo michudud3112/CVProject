@@ -5,11 +5,10 @@ from pyfreenect2 import SyncMultiFrameListener as FrameListener
 
 # Initialize Kinect
 device = Device(getDefaultDeviceSerialNumber())
-device.open()
 
 # Set up a frame listener
 listener = FrameListener()
-device.set_color_listener(listener)
+device.setColorFrameListener(listener)
 
 # Start the device
 device.start()
@@ -17,4 +16,3 @@ print("Kinect is successfully initialized!")
 
 # Stop the device after the test
 device.stop()
-device.close()
