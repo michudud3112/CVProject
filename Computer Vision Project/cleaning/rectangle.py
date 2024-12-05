@@ -30,6 +30,9 @@ def process_image(input_image_path, output_image_path):
         result = np.zeros_like(image)
         result[mask == 255] = image[mask == 255]
 
+        for rect in rectangles:
+            cv2.rectangle(result, (rect[0], rect[1]), (rect[2], rect[3]), (0, 255, 0), 2)
+            
         cv2.imwrite(output_image_path, result)
 
-process_image("res.jpg", "res2.jpg")
+process_image("samples/res.jpg", "samples/res2.jpg")

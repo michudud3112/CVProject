@@ -1,8 +1,10 @@
 import cv2
 import numpy as np
 from rectangle import process_image
+from info import gather_info
+from sort import process_coordinates
 
-image = cv2.imread("photos/face1.jpg")
+image = cv2.imread("photos/test4.jpg")
 original_image = image.copy()
 
 hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
@@ -20,6 +22,7 @@ gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 blurred = cv2.GaussianBlur(gray, (5, 5), 0)
 
 edges = cv2.Canny(blurred, 50, 150)
+
 
 contours, _ = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
@@ -45,6 +48,11 @@ result[mask == 255] = image[mask == 255]
 
 result[gold_mask > 0] = [255, 0, 255]
 
-cv2.imwrite("res.jpg", result)
+cv2.imwrite("samples/res.jpg", result)
 
-process_image("res.jpg", "res2.jpg")
+process_image("samples/res.jpg", "samples/res2.jpg")
+
+gather_info("samples/res2.jpg")
+
+process_coordinates("samples/wall.txt", "samples/res2.jpg", "samples/res3.jpg", "wall_sorted.txt")
+
