@@ -34,5 +34,3 @@ def process_image(input_image_path, output_image_path):
             cv2.rectangle(result, (rect[0], rect[1]), (rect[2], rect[3]), (0, 255, 0), 2)
             
         cv2.imwrite(output_image_path, result)
-
-process_image("samples/res.jpg", "samples/res2.jpg")

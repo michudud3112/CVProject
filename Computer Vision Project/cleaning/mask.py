@@ -4,7 +4,7 @@ from rectangle import process_image
 from info import gather_info
 from sort import process_coordinates
 
-image = cv2.imread("photos/test4.jpg")
+image = cv2.imread("photos/face1.jpg")
 original_image = image.copy()
 
 hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
@@ -55,4 +55,3 @@ process_image("samples/res.jpg", "samples/res2.jpg")
 gather_info("samples/res2.jpg")
 
 process_coordinates("samples/wall.txt", "samples/res2.jpg", "samples/res3.jpg", "wall_sorted.txt")
-
