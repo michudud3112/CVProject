@@ -5,16 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed798d65-d448-45e3-b0b1-aa0639c7b306" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Computer Vision Project/gui/__main__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Computer Vision Project/gui/controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Computer Vision Project/gui/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Computer Vision Project/gui/view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CVProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CVProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Computer Vision Project/kinect/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Computer Vision Project/kinect/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/kinect/detect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/mask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/mask.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/22.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/cube.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/cube.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/face1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/face1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/face2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/face2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/face3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/face3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/face4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/face4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/face5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/face5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/face6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/face6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/front.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/front.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/front1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/front1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/front2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/front2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/kostka.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/kostka.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/kostka_post.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/kostka_post.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/test1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/test1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/test2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/test2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/test3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/test3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/photos/test4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/photos/test4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/rectangle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/samples/res.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/samples/res.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/samples/res2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/samples/res2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/samples/res3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/samples/res3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/samples/wall.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/samples/wall.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/sort.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/cleaning/wall_sorted.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/wall_sorted.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/gui/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +152,7 @@
       <workItem from="1733837460064" duration="344000" />
       <workItem from="1734002919709" duration="30000" />
       <workItem from="1735392043987" duration="1345000" />
-      <workItem from="1735393959889" duration="7951000" />
+      <workItem from="1735393959889" duration="10328000" />
     </task>
     <servers />
   </component>

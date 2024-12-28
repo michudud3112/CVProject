@@ -1,4 +1,5 @@
 import cv2
+from cleaning import sort
 
 class Camera:
     def __init__(self):
@@ -15,4 +16,6 @@ class Camera:
         self.cap.release()
 
     def handle_captured(self,frame):
-        print(frame)
+        #Start with cleaning.
+        1 == 1
+        #then go to solving

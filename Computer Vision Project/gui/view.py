@@ -11,6 +11,8 @@ class Window(QMainWindow):
         #Make smaller?
 
 
+        #ugly ass window TODO: fix
+
         #Window setup
         self.setWindowTitle("FixRubix")
         self.showMaximized()
