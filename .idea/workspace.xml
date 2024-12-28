@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed798d65-d448-45e3-b0b1-aa0639c7b306" name="Changes" comment="" />
+    <list default="true" id="ed798d65-d448-45e3-b0b1-aa0639c7b306" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Computer Vision Project/gui/__main__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Computer Vision Project/gui/controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Computer Vision Project/gui/model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Computer Vision Project/gui/view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CVProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CVProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/kinect/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/kinect/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/kinect/detect.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +31,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -31,30 +45,67 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Notification.DisplayName-DoNotAsk-Python Stub Packages Advertiser": "Python stub package recommended",
+    "Notification.DoNotAsk-Python Stub Packages Advertiser": "true",
+    "Python.__main__.executor": "Run",
+    "Python.controller.executor": "Run",
+    "Python.extract.executor": "Run",
+    "Python.gui.executor": "Run",
     "Python.main.executor": "Run",
     "Python.test.executor": "Run",
+    "Python.view.executor": "Run",
     "Python.viewer.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/jay/0s/vision/CVProject",
+    "last_opened_file_path": "/home/jay/0s/vision/CVProject/Computer Vision Project/gui/__main__.py",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Computer Vision Project/gui" />
       <recent name="$PROJECT_DIR$/Computer Vision Project/solving" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="gui" type="PythonConfigurationType" factoryName="Python">
+      <module name="CVProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 virtualenv at ~/penv" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Computer Vision Project/gui/__main__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
-        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.180" />
+        <option value="bundled-python-sdk-85c76a3b01b3-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.180" />
       </set>
     </attachedChunks>
   </component>
@@ -73,6 +124,16 @@
       <workItem from="1732180985421" duration="2214000" />
       <workItem from="1732481608723" duration="635000" />
       <workItem from="1732707806109" duration="1456000" />
+      <workItem from="1732716315278" duration="6991000" />
+      <workItem from="1732726702537" duration="642000" />
+      <workItem from="1733147017240" duration="1419000" />
+      <workItem from="1733405346358" duration="1502000" />
+      <workItem from="1733407410040" duration="195000" />
+      <workItem from="1733444773748" duration="4000" />
+      <workItem from="1733837460064" duration="344000" />
+      <workItem from="1734002919709" duration="30000" />
+      <workItem from="1735392043987" duration="1345000" />
+      <workItem from="1735393959889" duration="7951000" />
     </task>
     <servers />
   </component>
@@ -80,8 +141,13 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CVProject$test.coverage" NAME="test Coverage Results" MODIFIED="1732182053058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/kinect" />
+    <SUITE FILE_PATH="coverage/CVProject$view.coverage" NAME="view Coverage Results" MODIFIED="1735398397283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/gui" />
+    <SUITE FILE_PATH="coverage/CVProject$gui.coverage" NAME="gui Coverage Results" MODIFIED="1735401689597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/CVProject$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1735398336723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/gui" />
+    <SUITE FILE_PATH="coverage/CVProject$test.coverage" NAME="test Coverage Results" MODIFIED="1732718936425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/kinect" />
     <SUITE FILE_PATH="coverage/CVProject$viewer.coverage" NAME="viewer Coverage Results" MODIFIED="1732047530505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/perception" />
-    <SUITE FILE_PATH="coverage/CVProject$main.coverage" NAME="main Coverage Results" MODIFIED="1732707887623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project" />
+    <SUITE FILE_PATH="coverage/CVProject$extract.coverage" NAME="extract Coverage Results" MODIFIED="1732723122497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/kinect" />
+    <SUITE FILE_PATH="coverage/CVProject$controller.coverage" NAME="controller Coverage Results" MODIFIED="1735398332774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/gui" />
+    <SUITE FILE_PATH="coverage/CVProject$main.coverage" NAME="main Coverage Results" MODIFIED="1735394589727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/gui" />
   </component>
 </project>
