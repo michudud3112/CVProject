@@ -1,0 +1,9 @@
+Rectangle 1: x=699, y=407, width=77, height=47
+Rectangle 2: x=790, y=259, width=125, height=207
+Rectangle 3: x=929, y=409, width=168, height=49
+Rectangle 4: x=659, y=469, width=111, height=123
+Rectangle 5: x=790, y=473, width=125, height=124
+Rectangle 6: x=929, y=471, width=144, height=126
+Rectangle 7: x=692, y=607, width=79, height=194
+Rectangle 8: x=784, y=616, width=122, height=48
+Rectangle 9: x=922, y=612, width=168, height=196
