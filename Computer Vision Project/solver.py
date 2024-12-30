@@ -141,7 +141,7 @@ class solver:
 
     def make_a_daisy(self):
         '''Starts with an unsolved cube, solves a daisy'''
-        self.cube.moves += "Solving the daisy: "
+        #self.cube.moves += "Solving the daisy: "
         for i in range(4):
             if self.cube.uface.state[1][2] == self.cube.dface.state[1][1]:
                 self.cube.Up()
@@ -207,7 +207,7 @@ class solver:
 
     def daisy_to_cross(self):
         '''Starts with a daisy, solves the cross on the first face'''
-        self.cube.moves += "\n Solving the cross on the bottom: "
+        #self.cube.moves += "\n Solving the cross on the bottom: "
         for i in range(4):
             while self.cube.fface.state[0][1] != self.cube.fface.state[1][1] or self.cube.uface.state[2][1] != self.cube.dface.state[1][1]:
                 self.cube.U()
@@ -216,7 +216,7 @@ class solver:
 
     def corners_bottom_layer(self):
         '''Solves the corners in the bottom layer'''
-        self.cube.moves += "\n Solving the bottom layer corners:"
+        #self.cube.moves += "\n Solving the bottom layer corners:"
         for i in range(4):
             colors = [self.cube.fface.state[1][1],
                       self.cube.dface.state[1][1], self.cube.rface.state[1][1]]
@@ -278,7 +278,7 @@ class solver:
     def find_and_insert_f2l(self, colors):
         '''This method finds the correct edge piece for the
         given F2l case and inserts it in the correct slot'''
-        self.cube.moves += "Looking for F2L piece in top layer: "
+        #self.cube.moves += "Looking for F2L piece in top layer: "
         found_piece = False
         while not found_piece:
             if self.cube.fface.state[0][1] in colors and self.cube.uface.state[2][1] in colors:
@@ -296,7 +296,7 @@ class solver:
     def remove_f2l_from_wrong_slot(self, colors):
         '''Sometimes, an edge piece can be "stuck" in the wrong slot when solvign the F2L. This method allows to remove
         it from there and put it back into the top layer, from where it can be solved'''
-        self.cube.moves += "Removing from wrong slot: "
+        #self.cube.moves += "Removing from wrong slot: "
         removed = False
         count = 0
         center = self.cube.fface.state[1][1]
@@ -312,7 +312,7 @@ class solver:
 
     def solve_f2l(self):
         '''This method start with a solved first layer and solves the middle layer'''
-        self.cube.moves += "\n Solving the second layer: "
+        #self.cube.moves += "\n Solving the second layer: "
         # check if this step is necessary
         if self.cube.fface.state[1][2] == self.cube.fface.state[1][1] and self.cube.fface.state[1][0] == self.cube.fface.state[1][1] and self.cube.lface.state[1][2] == self.cube.lface.state[1][1] and self.cube.lface.state[1][0] == self.cube.lface.state[1][1] and self.cube.rface.state[1][2] == self.cube.rface.state[1][1] and self.cube.rface.state[1][0] == self.cube.rface.state[1][1] and self.cube.bface.state[1][2] == self.cube.bface.state[1][1] and self.cube.bface.state[1][0] == self.cube.bface.state[1][1]:
             return
@@ -331,7 +331,7 @@ class solver:
     def solve_cross(self):
         '''This method starts with the first two layers of the cube solved and creates a cross on the top layer'''
         # check if this step is necessary
-        self.cube.moves += "\n Solving the cross: "
+        #self.cube.moves += "\n Solving the cross: "
         if self.cube.uface.state[0][1] == self.cube.uface.state[1][1] and self.cube.uface.state[1][0] == self.cube.uface.state[1][1] and self.cube.uface.state[1][2] == self.cube.uface.state[1][1]:
             return
         if self.cube.uface.state[0][1] != self.cube.uface.state[1][1] and self.cube.uface.state[1][0] != self.cube.uface.state[1][1] and self.cube.uface.state[1][2] != self.cube.uface.state[1][1]:
@@ -364,7 +364,7 @@ class solver:
 
     def adjust_cross(self):
         '''This method starts with a cross on the top layer and the first two layers solved. This method moves the edges all into their final positions. After this, the edges are fully solved'''
-        self.cube.moves += "\n Aligning the cross: "
+        #self.cube.moves += "\n Aligning the cross: "
         # check if this step is necessary
         checks = 0
         self.cube.moves += "Checking if it's already aligned: "
@@ -420,7 +420,7 @@ class solver:
         and the cross on the top face solved and adjusted,
         and moves the corners into the correct spots. 
         After this, they will only need to be rotated.'''
-        self.cube.moves += "\n Getting the corners in the right positions: "
+        #self.cube.moves += "\n Getting the corners in the right positions: "
         corners_checked = 0
         # check if performing this step is needed
         if self.is_top_right_corner_correct():
@@ -454,7 +454,7 @@ class solver:
 
     def rotate_corners(self):
         '''This method rotates each corner. After this method, the cube will be solved'''
-        self.cube.moves += "\n Rotating the corners: "
+        #self.cube.moves += "\n Rotating the corners: "
         # first check if corners are already rotated correctly
         self.cube.z2()
         if self.cube.fface.state[2][2] == self.cube.fface.state[1][1] and self.cube.fface.state[2][0] == self.cube.fface.state[1][1] and self.cube.rface.state[2][2] == self.cube.rface.state[1][1]:
