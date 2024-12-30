@@ -1,3 +1,4 @@
+import cv2
 from pyfreenect2 import PyFreeNect2 as Freenect, Freenect2Device as Device, getDefaultDeviceSerialNumber
 from pyfreenect2 import SyncMultiFrameListener as FrameListener, Frame
 import matplotlib.pyplot as plt
@@ -13,15 +14,21 @@ device.setIrAndDepthFrameListener(listener)
 device.start()
 print("Kinect is successfully initialized!")
 
-# Get a frame
-frames = listener.waitForNewFrame()
-print("Frame is successfully captured!")
+# CUBE DETECTION
+# Get array of frames
+frames = [None] * 10
+for i in range(10):
+    frames[i] = listener.waitForNewFrame()
+    print("Frame %d is successfully captured!", i)
+
+# Run detection algo (backproj)
+# algo code
+# import masker
+# This will get us new frames, we need to remove the part of the frame that we don't need
 
 rgb_frame = frames.getFrame(Frame.COLOR).getRGBData()
 depth_frame = frames.getFrame(Frame.DEPTH).getDepthData()
 
-print("RGB frame shape: ", rgb_frame.shape)
-print("Depth frame shape: ", depth_frame.shape)
 
 # Visualize the RGB data
 plt.figure()
