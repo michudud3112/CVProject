@@ -3,6 +3,7 @@ import numpy as np
 from rectangle import process_image
 from info import gather_info
 from sort import process_coordinates
+import re
 
 class ImageProcessor:
     def __init__(self, image_path):
@@ -51,6 +52,22 @@ class ImageProcessor:
         process_image(intermediate_path, final_path)
         gather_info(final_path)
         process_coordinates(wall_text, final_path, "samples/res3.jpg", sorted_wall_text)
+        
+        try:
+            with open(sorted_wall_text, 'r') as file:
+                lines = file.readlines()
+                is_correct = len(lines) == 9
+                coordinates = []
+                for line in lines:
+                    points = re.findall(r'x=(\d+),\s*y=(\d+)', line)
+                    coords = [(int(x), int(y)) for x, y in points]
+                    coordinates.append(coords)
+            
+        except FileNotFoundError:
+            is_correct = False
+            coordinates = []
+        
+        return is_correct, coordinates
 
 if __name__ == "__main__":
     processor = ImageProcessor("photos/face1.jpg")
@@ -62,4 +79,6 @@ if __name__ == "__main__":
     processor.detect_rectangles()
     processor.apply_masks_and_save("samples/res.jpg")
     
-    processor.process_additional_steps("samples/res.jpg", "samples/res2.jpg", "samples/wall.txt", "wall_sorted.txt")
+    result = processor.process_additional_steps("samples/res.jpg", "samples/res2.jpg", "samples/wall.txt", "wall_sorted.txt")
+    
+    print(f"Result Tuple: {result}")
