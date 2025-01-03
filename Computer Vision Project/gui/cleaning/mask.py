@@ -37,6 +37,14 @@ class ImageProcessor:
                     self.rectangles.append((x, y, x + w, y + h))
 
     def apply_masks_and_save(self, output_path):
+        if self.mask is None:
+            print("Mask has not been created.")
+            return
+
+        if not self.rectangles:
+            print("No rectangles detected.")
+            return
+
         mask = np.zeros(self.image.shape[:2], dtype=np.uint8)
 
         for rect in self.rectangles:
@@ -46,7 +54,10 @@ class ImageProcessor:
         result[mask == 255] = self.image[mask == 255]
         result[self.mask > 0] = [255, 0, 255]
 
-        cv2.imwrite(output_path, result)
+        if cv2.imwrite(output_path, result):
+            print(f"Image saved successfully at {output_path}")
+        else:
+            print(f"Failed to save image at {output_path}")
 
     def process_additional_steps(self, intermediate_path, final_path, wall_text, sorted_wall_text):
         image = cv2.imread(intermediate_path)
