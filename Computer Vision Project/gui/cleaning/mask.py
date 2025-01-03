@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
-from rectangle import process_image
-from info import gather_info
-from sort import process_coordinates
+from .rectangle import process_image
+from .info import gather_info
+from .sort import process_coordinates
 import re
 
 class ImageProcessor:
