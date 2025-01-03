@@ -17,3 +17,8 @@ mycube.show_cube()
 
 # D' F2 L2 F2 U' F2 L2 D B2 D2 B2 F' U L' R' B2 D' L2 B L2 R'
 # U R U2 F R2 B D2 L2 D2 U2 F D2 F' U' L D' F U F' R'
+
+class Move: #give me an array of these as output
+    def __init__(self, dir, num):
+        self.dir = dir #direction of move
+        self.num = num #number of moves

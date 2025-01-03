@@ -6,6 +6,7 @@ from cleaning.mask import ImageProcessor
 class Camera:
     def __init__(self):
         self.cap = cv2.VideoCapture(0) #Init the cam
+
         self.save_dir = os.path.join(os.path.dirname(__file__), "imgs")
         if not os.path.exists(self.save_dir): #for issues with perms
             try:
