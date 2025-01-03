@@ -1,12 +1,7 @@
 from PyQt5.QtCore import QTimer, pyqtSignal, QObject
 
-class CameraSignals(QObject): #Observer pattern essentially
-    capture_requested = pyqtSignal()
-
-class SolveSignal(QObject):
-    next_solve = pyqtSignal()
-
 class Controller:
+    """Main controller instance"""
     def __init__(self, model, view):
         self.model = model
         self.view = view
@@ -18,19 +13,23 @@ class Controller:
         self.view.capture_signal.connect(self.capture_frame)
 
     def update_frame(self):
+        """Updates UI camera view with new camera frame"""
         frame = self.model.get_frame()
         if frame is not None:
             self.view.view_update(frame)
 
-    def capture_frame(self): #Merge with above?
+    def capture_frame(self):
+        """Captures a frame from the camera"""
         frame = self.model.get_frame()
         self.model.handle_captured(frame)
         if frame is not None:
             pass
 
     def next_solve(self):
-        data = self.model.SolveDat.get_data()
+        """Gets next solve step"""
+        data = self.model.SolveData.get_data() #eh?
 
     def stop(self):
+        """Stops the app"""
         self.timer.stop()
         self.model.release()

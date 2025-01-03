@@ -3,63 +3,66 @@ from PyQt5.QtWidgets import QLabel, QVBoxLayout, QMainWindow, QWidget, QSizePoli
 from PyQt5.QtGui import QImage, QPixmap, QPainter, QColor, QPainterPath
 
 
+class CameraLabel(QLabel):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        self.setAlignment(Qt.AlignCenter)
+        self.current_display_size = QSize(0, 0)
+
+    def setPixmap(self, pixmap):
+        if pixmap.width() > 0 and pixmap.height() > 0:
+            scaled_pixmap = pixmap.scaled(
+                self.size(),
+                Qt.KeepAspectRatioByExpanding,
+                Qt.SmoothTransformation
+            )
+            self.current_display_size = scaled_pixmap.size()
+            super().setPixmap(scaled_pixmap)
+
+    def resizeEvent(self, event):
+        if self.pixmap():
+            self.setPixmap(self.pixmap())
+        super().resizeEvent(event)
+
+    def updateAspectRatio(self, width, height):
+        self.aspect_ratio = width / height
+
+
 class OverlayWidget(QWidget):
-    def __init__(self, parent=None, cutout_size=200):
+    def __init__(self, parent=None, cutout_percentage=0.2):
         super().__init__(parent)
         self.setAttribute(Qt.WA_TransparentForMouseEvents)
         self.setAttribute(Qt.WA_TranslucentBackground)
-        self.cutout_size = cutout_size
+        self.cutout_percentage = cutout_percentage
+        self.camera_label = None
+
+    def setCameraLabel(self, label):
+        self.camera_label = label
 
     def paintEvent(self, event):
+        if not self.camera_label or not self.camera_label.current_display_size:
+            return
+
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
+
+        display_size = self.camera_label.current_display_size
+        cutout_size = int(min(display_size.width(), display_size.height()) * self.cutout_percentage)
 
         full_path = QPainterPath()
         full_path.addRect(0, 0, self.width(), self.height())
 
         center_x = self.width() // 2
         center_y = self.height() // 2
-        cutout_x = center_x - (self.cutout_size // 2)
-        cutout_y = center_y - (self.cutout_size // 2)
+        cutout_x = center_x - (cutout_size // 2)
+        cutout_y = center_y - (cutout_size // 2)
 
         cutout_path = QPainterPath()
-        cutout_path.addRect(cutout_x, cutout_y, self.cutout_size, self.cutout_size)
+        cutout_path.addRect(cutout_x, cutout_y, cutout_size, cutout_size)
 
         final_path = full_path.subtracted(cutout_path)
         painter.fillPath(final_path, QColor(0, 0, 0, 153))
-
-
-class CameraLabel(QLabel):
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        self.setAlignment(Qt.AlignCenter)
-        self.aspect_ratio = 4 / 3  # Default aspect ratio (can be updated when receiving first frame)
-
-    def setPixmap(self, pixmap):
-        if pixmap.width() > 0 and pixmap.height() > 0:
-            # Calculate available space
-            available_width = self.width()
-            available_height = self.height()
-
-            # Calculate target size maintaining aspect ratio
-            width = available_width
-            height = int(width / self.aspect_ratio)
-
-            if height > available_height:
-                height = available_height
-                width = int(height * self.aspect_ratio)
-
-            # Scale the pixmap
-            scaled_pixmap = pixmap.scaled(
-                width, height,
-                Qt.KeepAspectRatio,
-                Qt.SmoothTransformation
-            )
-            super().setPixmap(scaled_pixmap)
-
-    def updateAspectRatio(self, width, height):
-        self.aspect_ratio = width / height
 
 
 class Window(QMainWindow):
@@ -71,13 +74,11 @@ class Window(QMainWindow):
 
     def initUI(self):
         self.setWindowTitle("FixRubix")
-        self.showMaximized()
+        self.resize(800, 600)
 
-        # Create main central widget
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
 
-        # Main horizontal layout
         self.main_layout = QHBoxLayout(self.central_widget)
         self.main_layout.setContentsMargins(0, 0, 0, 0)
         self.main_layout.setSpacing(0)
@@ -87,7 +88,6 @@ class Window(QMainWindow):
         self.left_panel.setFixedWidth(200)
         self.left_panel.setStyleSheet("background-color: #f0f0f0;")
 
-        # Left panel layout
         left_layout = QVBoxLayout(self.left_panel)
 
         instructions = QLabel("Instructions:")
@@ -100,7 +100,6 @@ class Window(QMainWindow):
 
         left_layout.addStretch()
 
-        # Add left panel to main layout
         self.main_layout.addWidget(self.left_panel)
 
         # Right side container
@@ -109,30 +108,27 @@ class Window(QMainWindow):
         right_layout.setContentsMargins(0, 0, 0, 0)
         right_layout.setSpacing(10)
 
-        # Camera container (takes all available space)
         self.container = QWidget()
         self.container.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         container_layout = QVBoxLayout(self.container)
         container_layout.setContentsMargins(0, 0, 0, 0)
 
-        # Camera label
         self.cam = CameraLabel()
         container_layout.addWidget(self.cam)
 
-        # Overlay
-        self.overlay = OverlayWidget(self.container, cutout_size=200)
+        self.overlay = OverlayWidget(self.container, cutout_percentage=0.2)
+        self.overlay.setCameraLabel(self.cam)
 
-        # Add camera container
         right_layout.addWidget(self.container, 1)
 
-        # Button
         self.button = QPushButton("Capture")
         self.button.setFixedSize(100, 50)
         self.button.clicked.connect(self.on_capture)
         right_layout.addWidget(self.button, 0, Qt.AlignCenter)
 
-        # Add right container to main layout
         self.main_layout.addWidget(right_container, 1)
+
+        self.setMinimumSize(600, 400)
 
     def updateOverlayGeometry(self):
         if hasattr(self, 'overlay') and hasattr(self, 'container'):
@@ -151,9 +147,7 @@ class Window(QMainWindow):
         line_bytes = 3 * w
         img = QImage(frame.data, w, h, line_bytes, QImage.Format_RGB888)
 
-        # Update aspect ratio based on the actual frame
         self.cam.updateAspectRatio(w, h)
-
         self.cam.setPixmap(QPixmap.fromImage(img))
         self.updateOverlayGeometry()
 

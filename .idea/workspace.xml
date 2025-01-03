@@ -5,11 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed798d65-d448-45e3-b0b1-aa0639c7b306" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ComputerVisionProject/gui/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/solving/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/solving/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ComputerVisionProject/gui/solving/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/cleaning/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cleaning/info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/cleaning/mask.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cleaning/mask.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/cleaning/photos/face1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cleaning/photos/face1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/cleaning/photos/face2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cleaning/photos/face2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/cleaning/rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cleaning/rectangle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/cleaning/samples/wall.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cleaning/samples/wall.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/cleaning/sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cleaning/sort.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/cleaning/wall_sorted.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cleaning/wall_sorted.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/imgs/temp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/solving/Face.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/solving/Face.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/solving/cube.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/solving/cube.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/solving/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/solving/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/solving/solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/solving/solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/gui/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ComputerVisionProject/kinect/detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kinect/detect.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +102,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Computer Vision Project/gui/__main__.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ComputerVisionProject/gui/__main__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -132,6 +148,7 @@
       <workItem from="1735453515077" duration="299000" />
       <workItem from="1735535378701" duration="6986000" />
       <workItem from="1735895335130" duration="5091000" />
+      <workItem from="1735929562330" duration="2093000" />
     </task>
     <servers />
   </component>
@@ -151,7 +168,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CVProject$view.coverage" NAME="view Coverage Results" MODIFIED="1735398397283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/gui" />
-    <SUITE FILE_PATH="coverage/CVProject$gui.coverage" NAME="gui Coverage Results" MODIFIED="1735903536656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/CVProject$gui.coverage" NAME="gui Coverage Results" MODIFIED="1735927716616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/CVProject$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1735398336723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/gui" />
     <SUITE FILE_PATH="coverage/CVProject$test.coverage" NAME="test Coverage Results" MODIFIED="1732718936425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/kinect" />
     <SUITE FILE_PATH="coverage/CVProject$viewer.coverage" NAME="viewer Coverage Results" MODIFIED="1732047530505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/perception" />

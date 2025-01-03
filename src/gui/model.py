@@ -4,8 +4,9 @@ from cleaning.mask import ImageProcessor
 
 
 class Camera:
+    """Main class for handling camera and related"""
     def __init__(self):
-        self.cap = cv2.VideoCapture(0) #Init the cam
+        self.cap = cv2.VideoCapture(0) #Init the cam TODO: replace with kinect
 
         self.save_dir = os.path.join(os.path.dirname(__file__), "imgs")
         if not os.path.exists(self.save_dir): #for issues with perms
@@ -20,6 +21,7 @@ class Camera:
                 raise
 
     def get_frame(self):
+        """Gets a frame from camera instance"""
         ret, frame = self.cap.read() #Get a frame
 
         if ret:
@@ -38,9 +40,11 @@ class Camera:
         return None
 
     def release(self):
+        """Stops video capture"""
         self.cap.release()
 
     def handle_captured(self,frame):
+        """Handles a captured frame. Invokes face detection. If 6 are found, begins solving"""
         #Start with cleaning.
         print("Cleaning")
 
@@ -48,15 +52,21 @@ class Camera:
 
         clean, res = img_processor.process() #function call
         if clean:
-            CamDat.add_data(res)
+            FaceData.add_data(res)
 
-        if CamDat.get_size() == 6:
-            self.handle_solve
+        if FaceData.get_size() == 6:
+            print("Enough data")
+            self.handle_solve()
+
 
     def handle_solve(self):
-        1 == 1
+        """Invokes cube solving with detected faces"""
+        print("Solving")
+        data = FaceData.get_data()
 
-class SolveDat:
+
+class SolveData:
+    """Storage for solve data"""
     data = []
 
     @classmethod
@@ -67,7 +77,8 @@ class SolveDat:
     def get_data(cls):
         return cls.data
 
-class CamDat:
+class FaceData:
+    """Storage for detected face data"""
     data = []
 
     @classmethod
