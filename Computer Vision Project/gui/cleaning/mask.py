@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
-from .rectangle import process_image
-from .info import gather_info
-from .sort import process_coordinates
+from rectangle import process_image
+from info import gather_info
+from sort import process_coordinates
 import re
 
 class ImageProcessor:
@@ -15,11 +15,16 @@ class ImageProcessor:
         self.rectangles = []
 
     def process(self):
+        processor = ImageProcessor("photos/face1.jpg")
+        
         lower_gold = np.array([10, 100, 40])
         upper_gold = np.array([65, 255, 255])
 
         processor.create_gold_mask(lower_gold, upper_gold)
         processor.detect_rectangles()
+        processor.apply_masks_and_save("samples/res.jpg")
+        
+        result = processor.process_additional_steps("samples/res.jpg", "samples/res2.jpg", "samples/wall.txt", "wall_sorted.txt")
 
     def create_gold_mask(self, lower_gold, upper_gold):
         gold_mask = cv2.inRange(self.hsv, lower_gold, upper_gold)
@@ -76,16 +81,16 @@ class ImageProcessor:
         
         return is_correct, coordinates
 
-if __name__ == "__main__":
-    processor = ImageProcessor("photos/face1.jpg")
-    
-    lower_gold = np.array([10, 100, 40])
-    upper_gold = np.array([65, 255, 255])
+def process(self):
+        processor = ImageProcessor("photos/face1.jpg")
+        
+        lower_gold = np.array([10, 100, 40])
+        upper_gold = np.array([65, 255, 255])
 
-    processor.create_gold_mask(lower_gold, upper_gold)
-    processor.detect_rectangles()
-    processor.apply_masks_and_save("samples/res.jpg")
+        processor.create_gold_mask(lower_gold, upper_gold)
+        processor.detect_rectangles()
+        processor.apply_masks_and_save("samples/res.jpg")
+        
+        result = processor.process_additional_steps("samples/res.jpg", "samples/res2.jpg", "samples/wall.txt", "wall_sorted.txt")
     
-    result = processor.process_additional_steps("samples/res.jpg", "samples/res2.jpg", "samples/wall.txt", "wall_sorted.txt")
-    
-    print(f"Result Tuple: {result}")
+        print(f"Result Tuple: {result}")
