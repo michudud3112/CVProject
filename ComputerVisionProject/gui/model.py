@@ -2,6 +2,7 @@ import os
 import cv2
 from cleaning.mask import ImageProcessor
 
+
 class Camera:
     def __init__(self):
         self.cap = cv2.VideoCapture(0) #Init the cam
