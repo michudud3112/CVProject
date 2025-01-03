@@ -1,16 +1,38 @@
+import os
 import cv2
 from cleaning.mask import ImageProcessor
 
 class Camera:
     def __init__(self):
         self.cap = cv2.VideoCapture(0) #Init the cam
+        self.save_dir = os.path.join(os.path.dirname(__file__), "imgs")
+        if not os.path.exists(self.save_dir): #for issues with perms
+            try:
+                os.makedirs(self.save_dir)
+                print(f"Created directory: {self.save_dir}")
+            except PermissionError:
+                print(f"ERROR: No permission to create directory {self.save_dir}")
+                raise
+            except Exception as e:
+                print(f"ERROR creating directory: {str(e)}")
+                raise
 
     def get_frame(self):
         ret, frame = self.cap.read() #Get a frame
+
         if ret:
-            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            cv2.imwrite("/imgs/img.png",frame)
-            return frame
+            save_path = os.path.join(self.save_dir, "temp.jpg")
+
+            try:
+                if cv2.imwrite(save_path,frame):
+                    return frame
+                else:
+                    print(f"Failed to save image to {save_path}")
+            except PermissionError:
+                print(f"ERROR: No permissions to write to: {save_path}")
+            except Exception as e:
+                print(f"ERROR saving image: {str(e)}")
+
         return None
 
     def release(self):
@@ -20,9 +42,10 @@ class Camera:
         #Start with cleaning.
         print("Cleaning")
 
-        img_processor = ImageProcessor("./")
+        img_processor = ImageProcessor(os.path.join(self.save_dir, "temp.jpg"))
 
-        clean, res = img_processor.run(input) #function call
+
+        clean, res = img_processor.process() #function call
         if clean:
             CamDat.add_data(res)
 
@@ -61,4 +84,4 @@ class CamDat:
 
     @classmethod
     def get_size(cls):
-        cls.data.__sizeof__()
+        return len(cls.data)

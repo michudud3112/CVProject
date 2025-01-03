@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
-from rectangle import process_image
-from info import gather_info
-from sort import process_coordinates
+from .rectangle import process_image
+from .info import gather_info
+from .sort import process_coordinates
 import re
 
 class ImageProcessor:
@@ -15,16 +15,16 @@ class ImageProcessor:
         self.rectangles = []
 
     def process(self):
-        processor = ImageProcessor("photos/face1.jpg")
-        
+
         lower_gold = np.array([10, 100, 40])
         upper_gold = np.array([65, 255, 255])
 
-        processor.create_gold_mask(lower_gold, upper_gold)
-        processor.detect_rectangles()
-        processor.apply_masks_and_save("samples/res.jpg")
+        self.create_gold_mask(lower_gold, upper_gold)
+        self.detect_rectangles()
+        self.apply_masks_and_save("samples/res.jpg")
         
-        result = processor.process_additional_steps("samples/res.jpg", "samples/res2.jpg", "samples/wall.txt", "wall_sorted.txt")
+        result = self.process_additional_steps("samples/res.jpg", "samples/res2.jpg", "samples/wall.txt", "wall_sorted.txt")
+        return result
 
     def create_gold_mask(self, lower_gold, upper_gold):
         gold_mask = cv2.inRange(self.hsv, lower_gold, upper_gold)
@@ -61,6 +61,10 @@ class ImageProcessor:
         cv2.imwrite(output_path, result)
 
     def process_additional_steps(self, intermediate_path, final_path, wall_text, sorted_wall_text):
+        image = cv2.imread(intermediate_path)
+        if image is None:
+            raise FileNotFoundError(f"Image at path {intermediate_path} could not be loaded.")
+
         process_image(intermediate_path, final_path)
         gather_info(final_path)
         process_coordinates(wall_text, final_path, "samples/res3.jpg", sorted_wall_text)
