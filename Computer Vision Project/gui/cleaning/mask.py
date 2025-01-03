@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
-from rectangle import process_image
-from info import gather_info
-from sort import process_coordinates
+from .rectangle import process_image
+from .info import gather_info
+from .sort import process_coordinates
 import re
 
 class ImageProcessor:
@@ -13,6 +13,13 @@ class ImageProcessor:
         self.hsv = cv2.cvtColor(self.image, cv2.COLOR_BGR2HSV)
         self.mask = None
         self.rectangles = []
+
+    def process(self):
+        lower_gold = np.array([10, 100, 40])
+        upper_gold = np.array([65, 255, 255])
+
+        processor.create_gold_mask(lower_gold, upper_gold)
+        processor.detect_rectangles()
 
     def create_gold_mask(self, lower_gold, upper_gold):
         gold_mask = cv2.inRange(self.hsv, lower_gold, upper_gold)
