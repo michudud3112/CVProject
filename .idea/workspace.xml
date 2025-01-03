@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ed798d65-d448-45e3-b0b1-aa0639c7b306" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/mask.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/mask.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Computer Vision Project/gui/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/cleaning/info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer Vision Project/gui/imgs/temp.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Computer Vision Project/gui/imgs/temp.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,9 +136,20 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CVProject$view.coverage" NAME="view Coverage Results" MODIFIED="1735398397283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/gui" />
-    <SUITE FILE_PATH="coverage/CVProject$gui.coverage" NAME="gui Coverage Results" MODIFIED="1735903500808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/CVProject$gui.coverage" NAME="gui Coverage Results" MODIFIED="1735903536656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/CVProject$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1735398336723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/gui" />
     <SUITE FILE_PATH="coverage/CVProject$test.coverage" NAME="test Coverage Results" MODIFIED="1732718936425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/kinect" />
     <SUITE FILE_PATH="coverage/CVProject$viewer.coverage" NAME="viewer Coverage Results" MODIFIED="1732047530505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/perception" />

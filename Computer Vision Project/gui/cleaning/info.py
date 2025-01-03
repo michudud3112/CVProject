@@ -1,9 +1,11 @@
+import os
 import cv2
 import numpy as np
 
 def gather_info(image_path):
     img = cv2.imread(image_path)
-    res2 = cv2.imread('samples/res2.jpg')
+    save_dir = os.path.join(os.path.dirname(__file__), "samples")
+    res2 = cv2.imread(os.path.join(save_dir,"res2.jpg"))
     
     gray = cv2.cvtColor(res2, cv2.COLOR_BGR2GRAY)
     _, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
@@ -16,7 +18,7 @@ def gather_info(image_path):
     
     sorted_contours = sorted(contours, key=get_rectangle_info)
     
-    with open('samples/wall.txt', 'w') as file:
+    with open(os.path.join(save_dir, "wall.txt"), 'w') as file:
         
         for contour in sorted_contours[:9]:
             x, y, w, h = cv2.boundingRect(contour)
