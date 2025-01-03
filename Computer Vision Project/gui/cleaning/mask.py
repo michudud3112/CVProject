@@ -39,11 +39,9 @@ class ImageProcessor:
     def apply_masks_and_save(self, output_path):
         if self.mask is None:
             print("Mask has not been created.")
-            return
 
         if not self.rectangles:
             print("No rectangles detected.")
-            return
 
         mask = np.zeros(self.image.shape[:2], dtype=np.uint8)
 

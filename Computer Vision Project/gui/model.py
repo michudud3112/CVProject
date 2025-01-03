@@ -44,12 +44,11 @@ class Camera:
 
         img_processor = ImageProcessor(os.path.join(self.save_dir, "temp.jpg"))
 
-
         clean, res = img_processor.process() #function call
         if clean:
             CamDat.add_data(res)
 
-        if(CamDat.get_size() == 6):
+        if CamDat.get_size() == 6:
             #Solve
             valid, res = True, [1,2] #function call
             if not valid:
