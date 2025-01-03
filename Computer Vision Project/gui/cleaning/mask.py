@@ -42,6 +42,7 @@ class ImageProcessor:
 
         if not self.rectangles:
             print("No rectangles detected.")
+            return False
 
         mask = np.zeros(self.image.shape[:2], dtype=np.uint8)
 
@@ -56,6 +57,7 @@ class ImageProcessor:
             print(f"Image saved successfully at {output_path}")
         else:
             print(f"Failed to save image at {output_path}")
+        return True
 
     def process_additional_steps(self, intermediate_path, final_path, wall_text, sorted_wall_text):
         image = cv2.imread(intermediate_path)
@@ -89,7 +91,9 @@ class ImageProcessor:
 
         self.create_gold_mask(lower_gold, upper_gold)
         self.detect_rectangles()
-        self.apply_masks_and_save("samples/res.jpg")
+
+        if not self.apply_masks_and_save("samples/res.jpg"):
+            return False, None
         
         result = self.process_additional_steps("samples/res.jpg", "samples/res2.jpg", "samples/wall.txt", "wall_sorted.txt")
         return result
