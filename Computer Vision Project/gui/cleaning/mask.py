@@ -1,3 +1,4 @@
+import os
 import cv2
 import numpy as np
 from .rectangle import process_image
@@ -13,6 +14,7 @@ class ImageProcessor:
         self.hsv = cv2.cvtColor(self.image, cv2.COLOR_BGR2HSV)
         self.mask = None
         self.rectangles = []
+        self.save_dir = os.path.join(os.path.dirname(__file__), "samples")
 
     def create_gold_mask(self, lower_gold, upper_gold):
         gold_mask = cv2.inRange(self.hsv, lower_gold, upper_gold)
@@ -66,7 +68,7 @@ class ImageProcessor:
 
         process_image(intermediate_path, final_path)
         gather_info(final_path)
-        process_coordinates(wall_text, final_path, "samples/res3.jpg", sorted_wall_text)
+        process_coordinates(wall_text, final_path, os.path.join(self.save_dir, "res3.jpg"), sorted_wall_text)
         
         try:
             with open(sorted_wall_text, 'r') as file:
@@ -92,8 +94,8 @@ class ImageProcessor:
         self.create_gold_mask(lower_gold, upper_gold)
         self.detect_rectangles()
 
-        if not self.apply_masks_and_save("samples/res.jpg"):
+        if not self.apply_masks_and_save(os.path.join(self.save_dir, "res.jpg")): #Something failed. Exit.
             return False, None
         
-        result = self.process_additional_steps("samples/res.jpg", "samples/res2.jpg", "samples/wall.txt", "wall_sorted.txt")
+        result = self.process_additional_steps(os.path.join(self.save_dir, "res.jpg"), os.path.join(self.save_dir, "res2.jpg"), os.path.join(self.save_dir, "wall.txt"), os.path.join(self.save_dir, "wall_sorted.txt"))
         return result

@@ -49,11 +49,10 @@ class Camera:
             CamDat.add_data(res)
 
         if CamDat.get_size() == 6:
-            #Solve
-            valid, res = True, [1,2] #function call
-            if not valid:
-                print("solving failed")
+            self.handle_solve
 
+    def handle_solve(self):
+        1 == 1
 
 class SolveDat:
     data = []
