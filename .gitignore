@@ -1,2 +1,5 @@
 #Ignore images
 src/gui/imgs/*
+
+.idea
+.vscode
