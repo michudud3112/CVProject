@@ -14,18 +14,6 @@ class ImageProcessor:
         self.mask = None
         self.rectangles = []
 
-    def process(self):
-
-        lower_gold = np.array([10, 100, 40])
-        upper_gold = np.array([65, 255, 255])
-
-        self.create_gold_mask(lower_gold, upper_gold)
-        self.detect_rectangles()
-        self.apply_masks_and_save("samples/res.jpg")
-        
-        result = self.process_additional_steps("samples/res.jpg", "samples/res2.jpg", "samples/wall.txt", "wall_sorted.txt")
-        return result
-
     def create_gold_mask(self, lower_gold, upper_gold):
         gold_mask = cv2.inRange(self.hsv, lower_gold, upper_gold)
         kernel = np.ones((5, 5), np.uint8)
@@ -85,16 +73,14 @@ class ImageProcessor:
         
         return is_correct, coordinates
 
-def process(self):
-        processor = ImageProcessor("photos/face1.jpg")
-        
+    def process(self):
+
         lower_gold = np.array([10, 100, 40])
         upper_gold = np.array([65, 255, 255])
 
-        processor.create_gold_mask(lower_gold, upper_gold)
-        processor.detect_rectangles()
-        processor.apply_masks_and_save("samples/res.jpg")
+        self.create_gold_mask(lower_gold, upper_gold)
+        self.detect_rectangles()
+        self.apply_masks_and_save("samples/res.jpg")
         
-        result = processor.process_additional_steps("samples/res.jpg", "samples/res2.jpg", "samples/wall.txt", "wall_sorted.txt")
-    
-        print(f"Result Tuple: {result}")
+        result = self.process_additional_steps("samples/res.jpg", "samples/res2.jpg", "samples/wall.txt", "wall_sorted.txt")
+        return result
