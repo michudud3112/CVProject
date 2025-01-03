@@ -93,7 +93,7 @@ class ImageProcessor:
         self.detect_rectangles()
 
         if not self.apply_masks_and_save("samples/res.jpg"):
-            return False, [-1,-1]
+            return False, None
         
         result = self.process_additional_steps("samples/res.jpg", "samples/res2.jpg", "samples/wall.txt", "wall_sorted.txt")
         return result
