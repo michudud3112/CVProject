@@ -25,7 +25,7 @@ class Camera:
 
             try:
                 if cv2.imwrite(save_path,frame):
-                    return frame
+                    return cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                 else:
                     print(f"Failed to save image to {save_path}")
             except PermissionError:
