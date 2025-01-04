@@ -16,6 +16,7 @@ rface = Face.face([[6, 5, 6], [5, 2, 3], [5, 2, 4]])
 bface = Face.face([[3, 4, 3], [1, 5, 5], [3, 2, 3]])
 dface = Face.face([[5, 6, 4], [6, 1, 3], [1, 6, 1]])
 
+
 #this is where the face are added to the cube. Preferrably change the variables above
 mycube = cube.cube(uface, lface, fface, rface, bface, dface, "", [])
 mysolver = solver.solver(mycube)
