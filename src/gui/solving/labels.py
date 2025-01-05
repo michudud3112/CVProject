@@ -43,44 +43,44 @@ class labels:
         self.labels[0][2][2] = self.grid[3][0][2][0]
     
     def match_labels_to_pieces_left_layer(self):
-        self.labels[1][0][0] = 1
-        self.labels[1][0][1] = 1
-        self.labels[1][0][2] = 1
-        self.labels[1][1][0] = 1
-        self.labels[1][1][2] = 1
-        self.labels[1][2][0] = 1
-        self.labels[1][2][1] = 1
-        self.labels[1][2][2] = 1
+        self.labels[1][0][0] = self.grid[4][0][2][0]
+        self.labels[1][0][1] = self.grid[0][1][0][0]
+        self.labels[1][0][2] = self.grid[2][0][0][0]
+        self.labels[1][1][0] = self.grid[4][1][2][0]
+        self.labels[1][1][2] = self.grid[2][1][0][0]
+        self.labels[1][2][0] = self.grid[4][2][2][0]
+        self.labels[1][2][1] = self.grid[5][1][0][0]
+        self.labels[1][2][2] = self.grid[2][2][0][0]
     
     def match_labels_to_pieces_front_layer(self):
-        self.labels[2][0][0] = 1
-        self.labels[2][0][1] = 1
-        self.labels[2][0][2] = 1
-        self.labels[2][1][0] = 1
-        self.labels[2][1][2] = 1
-        self.labels[2][2][0] = 1
-        self.labels[2][2][1] = 1
-        self.labels[2][2][2] = 1
+        self.labels[2][0][0] = self.grid[0][2][0][1]
+        self.labels[2][0][1] = self.grid[0][2][1][1]
+        self.labels[2][0][2] = self.grid[0][2][2][1]
+        self.labels[2][1][0] = self.grid[1][1][2][0]
+        self.labels[2][1][2] = self.grid[3][1][0][0]
+        self.labels[2][2][0] = self.grid[5][0][0][1]
+        self.labels[2][2][1] = self.grid[5][0][1][1]
+        self.labels[2][2][2] = self.grid[5][0][2][1]
 
     def match_labels_to_pieces_right_layer(self):
-        self.labels[3][0][0] = 1
-        self.labels[3][0][1] = 1
-        self.labels[3][0][2] = 1
-        self.labels[3][1][0] = 1
-        self.labels[3][1][2] = 1
-        self.labels[3][2][0] = 1
-        self.labels[3][2][1] = 1
-        self.labels[3][2][2] = 1
+        self.labels[3][0][0] = self.grid[2][0][2][0]
+        self.labels[3][0][1] = self.grid[0][1][2][0]
+        self.labels[3][0][2] = self.grid[4][0][0][0]
+        self.labels[3][1][0] = self.grid[2][1][2][0]
+        self.labels[3][1][2] = self.grid[4][1][0][0]
+        self.labels[3][2][0] = self.grid[2][2][2][0]
+        self.labels[3][2][1] = self.grid[5][1][2][0]
+        self.labels[3][2][2] = self.grid[4][2][0][0]
     
     def match_labels_to_pieces_back_layer(self):
-        self.labels[4][0][0] = 1
-        self.labels[4][0][1] = 1
-        self.labels[4][0][2] = 1
-        self.labels[4][1][0] = 1
-        self.labels[4][1][2] = 1
-        self.labels[4][2][0] = 1
-        self.labels[4][2][1] = 1
-        self.labels[4][2][2] = 1
+        self.labels[4][0][0] = self.grid[0][0][2][1]
+        self.labels[4][0][1] = self.grid[0][0][1][1]
+        self.labels[4][0][2] = self.grid[0][0][0][1]
+        self.labels[4][1][0] = self.grid[3][1][2][0]
+        self.labels[4][1][2] = self.grid[1][1][0][0]
+        self.labels[4][2][0] = self.grid[5][2][2][1]
+        self.labels[4][2][1] = self.grid[5][2][1][1]
+        self.labels[4][2][2] = self.grid[5][2][0][1]
       
     def match_labels_to_pieces_down_layer(self):
         self.labels[5][0][0] = self.grid[2][2][0][1]
