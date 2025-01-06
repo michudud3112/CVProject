@@ -61,3 +61,5 @@ def process_coordinates(file_path, image_path, output_image_path, output_file_pa
     
     annotate_image(image_path, grouped_rectangles, output_image_path)
     save_sorted_rectangles(grouped_rectangles, output_file_path)
+
+    return x_y_matrix, width_height_matrix

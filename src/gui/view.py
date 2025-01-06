@@ -2,6 +2,7 @@ from PyQt5.QtCore import Qt, pyqtSignal, QRect, QSize
 from PyQt5.QtWidgets import QLabel, QVBoxLayout, QMainWindow, QWidget, QSizePolicy, QPushButton, QHBoxLayout
 from PyQt5.QtGui import QImage, QPixmap, QPainter, QColor, QPainterPath
 
+#This file is mostly AI
 
 class CameraLabel(QLabel):
     def __init__(self, parent=None):

@@ -1,5 +1,5 @@
-import Face
-import move
+from src.gui.solving import Face
+from src.gui.solving.move import move
 
 class cube:
     def __init__(self, uface: Face, lface: Face, fface: Face, rface: Face, bface: Face, dface: Face, solution: str, moves) -> None:
