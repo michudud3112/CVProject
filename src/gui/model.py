@@ -1,7 +1,8 @@
 import os
 import cv2
+import logging
 from cleaning.mask import ImageProcessor
-
+from solving.solver import Solver
 
 class Camera:
     """Main class for handling camera and related"""
@@ -12,12 +13,12 @@ class Camera:
         if not os.path.exists(self.save_dir): #for issues with perms
             try:
                 os.makedirs(self.save_dir)
-                print(f"Created directory: {self.save_dir}")
+                logging.info(f"Created directory: {self.save_dir}")
             except PermissionError:
-                print(f"ERROR: No permission to create directory {self.save_dir}")
+                logging.error(f"ERROR: No permission to create directory {self.save_dir}")
                 raise
             except Exception as e:
-                print(f"ERROR creating directory: {str(e)}")
+                logging.error(f"ERROR creating directory: {str(e)}")
                 raise
 
     def get_frame(self):
@@ -31,11 +32,11 @@ class Camera:
                 if cv2.imwrite(save_path,frame):
                     return cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                 else:
-                    print(f"Failed to save image to {save_path}")
+                    logging.info(f"Failed to save image to {save_path}")
             except PermissionError:
-                print(f"ERROR: No permissions to write to: {save_path}")
+                logging.error(f"ERROR: No permissions to write to: {save_path}")
             except Exception as e:
-                print(f"ERROR saving image: {str(e)}")
+                logging.error(f"ERROR saving image: {str(e)}")
 
         return None
 
@@ -46,31 +47,39 @@ class Camera:
     def handle_captured(self,frame):
         """Handles a captured frame. Invokes face detection. If 6 are found, begins solving"""
         #Start with cleaning.
-        print("Cleaning")
+        logging.info("Cleaning")
 
         img_processor = ImageProcessor(os.path.join(self.save_dir, "temp.jpg"))
 
         clean, res = img_processor.process() #function call
-        if clean:
-            FaceData.add_data(res)
+        if not clean:
+            logging.warning("Cleaning failed")
+
+        FaceData.add_data(res)
 
         if FaceData.get_size() == 6:
-            print("Enough data")
+            logging.info("Enough data")
             self.handle_solve()
 
 
     def handle_solve(self):
         """Invokes cube solving with detected faces"""
-        print("Solving")
+        logging.info("Solving")
         data = FaceData.get_data()
+
+        solver = Solver(data)
+        solved_data = solver.solve()
+        logging.info(solved_data) #debug
+
+        SolveData.populate_data(solved_data)
 
 
 class SolveData:
     """Storage for solve data"""
-    data = []
+    data = [] # 6 3x3 arrays     of sizes, with corresponding depths
 
     @classmethod
-    def create_data(cls, new):
+    def populate_data(cls, new):
         cls.data.append(new)
 
     @classmethod

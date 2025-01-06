@@ -1,9 +1,1 @@
-Rectangle: x=790, y=259, width=125, height=207
-Rectangle: x=699, y=407, width=77, height=47
-Rectangle: x=929, y=409, width=168, height=49
-Rectangle: x=659, y=469, width=111, height=123
-Rectangle: x=929, y=471, width=144, height=126
-Rectangle: x=790, y=473, width=125, height=124
-Rectangle: x=692, y=607, width=79, height=194
-Rectangle: x=922, y=612, width=168, height=196
-Rectangle: x=784, y=616, width=122, height=48
+Rectangle: x=122, y=345, width=104, height=14

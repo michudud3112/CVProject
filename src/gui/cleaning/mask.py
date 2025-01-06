@@ -97,5 +97,8 @@ class ImageProcessor:
         if not self.apply_masks_and_save(os.path.join(self.save_dir, "res.jpg")): #Something failed. Exit.
             return False, None
         
-        result = self.process_additional_steps(os.path.join(self.save_dir, "res.jpg"), os.path.join(self.save_dir, "res2.jpg"), os.path.join(self.save_dir, "wall.txt"), os.path.join(self.save_dir, "wall_sorted.txt"))
+        result = self.process_additional_steps(os.path.join(self.save_dir, "res.jpg"),
+                                               os.path.join(self.save_dir, "res2.jpg"),
+                                               os.path.join(self.save_dir, "wall.txt"),
+                                               os.path.join(self.save_dir, "wall_sorted.txt"))
         return result

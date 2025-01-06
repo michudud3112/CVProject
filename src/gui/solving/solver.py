@@ -1,5 +1,6 @@
-import movecleaner
-class solver:
+from src.gui.solving.movecleaner import movecleaner
+
+class Solver:
     '''This class will contain a Solver for the cube.'''
     # To DO:
     # implement daisy maker

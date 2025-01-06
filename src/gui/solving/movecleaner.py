@@ -1,5 +1,5 @@
-import cube
-import move
+from src.gui.solving.cube import cube
+from src.gui.solving.move import move
 
 
 class movecleaner:
