@@ -7,12 +7,6 @@
     <list default="true" id="ed798d65-d448-45e3-b0b1-aa0639c7b306" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/cleaning/mask.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cleaning/mask.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/cleaning/samples/wall.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cleaning/samples/wall.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/solving/cube.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/solving/cube.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/solving/movecleaner.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/solving/movecleaner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/solving/solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/solving/solver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +132,7 @@
       <workItem from="1735929562330" duration="2093000" />
       <workItem from="1735928063809" duration="765000" />
       <workItem from="1736057092112" duration="3528000" />
-      <workItem from="1736188164552" duration="431000" />
+      <workItem from="1736188164552" duration="2233000" />
     </task>
     <servers />
   </component>
