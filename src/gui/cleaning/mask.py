@@ -4,7 +4,6 @@ import numpy as np
 from .rectangle import process_image
 from .info import gather_info
 from .sort import process_coordinates
-import re
 
 class ImageProcessor:
     def __init__(self, image_path):
@@ -68,37 +67,29 @@ class ImageProcessor:
 
         process_image(intermediate_path, final_path)
         gather_info(final_path)
-        process_coordinates(wall_text, final_path, os.path.join(self.save_dir, "res3.jpg"), sorted_wall_text)
         
-        try:
-            with open(sorted_wall_text, 'r') as file:
-                lines = file.readlines()
-                is_correct = len(lines) == 9
-                coordinates = []
-                for line in lines:
-                    points = re.findall(r'x=(\d+),\s*y=(\d+)', line)
-                    coords = [(int(x), int(y)) for x, y in points]
-                    coordinates.append(coords)
-            
-        except FileNotFoundError:
-            is_correct = False
-            coordinates = []
-        
-        return is_correct, coordinates
+        x_y_matrix, width_height_matrix = process_coordinates(wall_text, final_path, 
+                                                            os.path.join(self.save_dir, "res3.jpg"), 
+                                                            sorted_wall_text)
+        is_correct = len(x_y_matrix) == 9
+
+        return is_correct, x_y_matrix, width_height_matrix
+
 
     def process(self):
-
         lower_gold = np.array([10, 100, 40])
         upper_gold = np.array([65, 255, 255])
 
         self.create_gold_mask(lower_gold, upper_gold)
         self.detect_rectangles()
 
-        if not self.apply_masks_and_save(os.path.join(self.save_dir, "res.jpg")): #Something failed. Exit.
-            return False, None
+        if not self.apply_masks_and_save(os.path.join(self.save_dir, "res.jpg")):
+            return False, None, None
         
-        result = self.process_additional_steps(os.path.join(self.save_dir, "res.jpg"),
-                                               os.path.join(self.save_dir, "res2.jpg"),
-                                               os.path.join(self.save_dir, "wall.txt"),
-                                               os.path.join(self.save_dir, "wall_sorted.txt"))
-        return result
+        is_correct, x_y_matrix, width_height_matrix = self.process_additional_steps(
+            os.path.join(self.save_dir, "res.jpg"),
+            os.path.join(self.save_dir, "res2.jpg"),
+            os.path.join(self.save_dir, "wall.txt"),
+            os.path.join(self.save_dir, "wall_sorted.txt")
+        )
+        return is_correct, x_y_matrix, width_height_matrix
