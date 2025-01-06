@@ -2,7 +2,7 @@ import cube
 import Face
 import solver
 import movecleaner
-#!!!FOR JAY!!!
+#when indexing: 0 top, 1 left, 2 front, 3 right, 4 back, 5 down
 
 
 # for testing - 1 is white, 2 is orange, 3 is green, 4 is red, 5 is blue, 6 is yellow
