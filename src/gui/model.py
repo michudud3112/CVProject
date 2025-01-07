@@ -6,6 +6,7 @@ from cleaning.mask import ImageProcessor
 from solving.solver import Solver
 from PyQt5.QtCore import pyqtSignal, QObject, QTimer
 
+
 class Camera(QObject):
     """Main class for handling camera and related"""
     text_update_signal = pyqtSignal(str)
@@ -14,10 +15,10 @@ class Camera(QObject):
 
     def __init__(self):
         super().__init__()
-        self.cap = cv2.VideoCapture(0) # Init the cam TODO: replace with kinect
+        self.cap = cv2.VideoCapture(0)  # Init the cam TODO: replace with kinect
 
         self.save_dir = os.path.join(os.path.dirname(__file__), "imgs")
-        if not os.path.exists(self.save_dir): # for issues with perms
+        if not os.path.exists(self.save_dir):  # for issues with perms
             try:
                 os.makedirs(self.save_dir)
                 logging.info(f"Created directory: {self.save_dir}")
@@ -30,7 +31,7 @@ class Camera(QObject):
 
     def get_frame(self):
         """Gets a frame from camera instance"""
-        ret, frame = self.cap.read() # Get a frame
+        ret, frame = self.cap.read()  # Get a frame
 
         if ret:
             save_path = os.path.join(self.save_dir, "temp.jpg")
@@ -58,7 +59,7 @@ class Camera(QObject):
 
         img_processor = ImageProcessor(os.path.join(self.save_dir, "temp.jpg"))
 
-        clean, posit, size = img_processor.process() # function call
+        clean, posit, size = img_processor.process()  # function call
         if not clean:
             logging.warning("Cleaning failed")
             self.update_text("Taking image failed. Please try again.")
@@ -80,7 +81,7 @@ class Camera(QObject):
             logging.info("Enough data")
             self.update_text("All images captured")
 
-            QTimer.singleShot(1000, self.handle_solve) #Delay before solving
+            QTimer.singleShot(1000, self.handle_solve)  # Delay before solving
 
     def handle_solve(self):
         """Invokes cube solving with detected faces"""
@@ -92,13 +93,12 @@ class Camera(QObject):
 
         solver = Solver(data)
         solved_data = solver.solve()
-        logging.info(solved_data) # debug
+        logging.info(solved_data)  # debug
 
         SolveData.add_data(solved_data)
 
-        #Rerouting button for next_solve
+        # Rerouting button for next_solve
         self.solve_signal.emit()
-
 
     def update_text(self, text):
         self.text_update_signal.emit(text)
@@ -109,7 +109,7 @@ class Camera(QObject):
 
 class SolveData:
     """Storage for solve data"""
-    data = [] # 6 3x3 arrays of sizes, with corresponding depths
+    data = []  # 6 3x3 arrays of sizes, with corresponding depths
     idx = 0
 
     @classmethod
@@ -132,6 +132,7 @@ class SolveData:
     @classmethod
     def reset_idx(cls):
         cls.idx = 0
+
 
 class FaceData:
     """Storage for detected face data"""
