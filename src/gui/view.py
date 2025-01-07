@@ -95,9 +95,9 @@ class Window(QMainWindow):
         instructions.setStyleSheet("font-weight: bold; font-size: 14px;")
         left_layout.addWidget(instructions)
 
-        steps = QLabel("1. Position the cube\n2. Center within square\n3. Press Capture")
-        steps.setWordWrap(True)
-        left_layout.addWidget(steps)
+        self.steps = QLabel("1. Position the cube\n2. Center within square\n3. Press Capture")
+        self.steps.setWordWrap(True)
+        left_layout.addWidget(self.steps)
 
         left_layout.addStretch()
 
@@ -154,3 +154,9 @@ class Window(QMainWindow):
 
     def on_capture(self):
         self.capture_signal.emit()
+
+    def update_steps(self, text):
+        self.steps.setText(text)
+
+    def update_button(self, text):
+        self.button.setText(text)
