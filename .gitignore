@@ -1,5 +1,5 @@
 #Ignore images
-src/gui/imgs/*
+CVProject/src/gui/imgs/*
 
 .idea
 .vscode
