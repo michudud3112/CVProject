@@ -1,15 +1,20 @@
 from src.gui.solving.movecleaner import movecleaner
-
+import labels
+import cube
+import Face
 class Solver:
     '''This class will contain a Solver for the cube.'''
-    # To DO:
-    # implement daisy maker
-    # improve f2l
-    # improve cross aligner
-    # improve is top right correct method
+    def __init__(self, data) -> None:
+        self.data = data
+        uface = Face.face([[0, 0, 0], [0, 0, 0], [0, 0, 0]])
+        lface = Face.face([[0, 0, 0], [0, 0, 0], [0, 0, 0]])
+        fface = Face.face([[0, 0, 0], [0, 0, 0], [0, 0, 0]])
+        rface = Face.face([[0, 0, 0], [0, 0, 0], [0, 0, 0]])
+        bface = Face.face([[0, 0, 0], [0, 0, 0], [0, 0, 0]])
+        dface = Face.face([[0, 0, 0], [0, 0, 0], [0, 0, 0]])
+        
 
-    def __init__(self, cube) -> None:
-        self.cube = cube
+        self.cube = cube.cube(uface, lface, fface, rface, bface, dface, "", [])
 
     # some useful algorithms
     def sexy_move(self):
@@ -481,10 +486,22 @@ class Solver:
                 self.reverse_sexy_move()
                 self.cube.D()
             corners += 1
-
+    def create_cube(self):
+        makelabels = labels.labels(self.cube,0.1)
+        makelabels.calculate_labels()
+        found_labels = makelabels.return_labels()
+        uface = Face.face(found_labels[0])
+        lface = Face.face(found_labels[1])
+        fface = Face.face(found_labels[2])
+        rface = Face.face(found_labels[3])
+        bface = Face.face(found_labels[4])
+        dface = Face.face(found_labels[5])
+        self.cube = cube.cube(uface, lface, fface, rface, bface, dface, "", [])
+        
     def solve(self):
         '''Main method of the solver class'''
         #print("Solving the daisy")
+        self.create_cube()
         self.make_a_daisy()
         #print("Solving the cross on the bottom")
         #print("Solving the cross on the bottom")
@@ -503,6 +520,6 @@ class Solver:
         self.move_corners()
         #print("rotate corners")
         self.rotate_corners()
-        mycleaner = movecleaner.movecleaner(self.cube)
+        mycleaner = movecleaner(self.cube)
         mycleaner.clean()
         #self.cube.moves += "Solved!"
