@@ -3,3 +3,6 @@ CVProject/src/gui/imgs/*
 
 .idea
 .vscode
+
+build/
+dist/

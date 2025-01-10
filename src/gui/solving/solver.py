@@ -1,7 +1,7 @@
 from src.gui.solving.movecleaner import movecleaner
-import labels
-import cube
-import Face
+from . import labels
+from . import cube
+from . import Face
 class Solver:
     '''This class will contain a Solver for the cube.'''
     def __init__(self, data) -> None:
