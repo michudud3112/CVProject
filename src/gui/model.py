@@ -1,11 +1,12 @@
 import os
 import cv2
-import logging
+import logging as log
 import numpy as np
 from cleaning.mask import ImageProcessor
 from solving.solver import Solver
 from PyQt5.QtCore import pyqtSignal, QObject, QTimer
-
+from pyfreenect2 import Freenect2Device as Device, getDefaultDeviceSerialNumber
+from pyfreenect2 import SyncMultiFrameListener as FrameListener, Frame
 
 class Camera(QObject):
     """Main class for handling camera and related"""
@@ -15,77 +16,88 @@ class Camera(QObject):
 
     def __init__(self):
         super().__init__()
-        self.cap = cv2.VideoCapture(0)  # Init the cam TODO: replace with kinect
+        try:
+            self.kinect = Kinect()
+            self.kinect.start()
+        except Exception as e:
+            log.error(f"Failed to start app: {str(e)}")
+            self.error_signal.emit(f"Failed to start app: {str(e)}")
+
+        self.captured_frame = None
+
 
         self.save_dir = os.path.join(os.path.dirname(__file__), "imgs")
         if not os.path.exists(self.save_dir):  # for issues with perms
             try:
                 os.makedirs(self.save_dir)
-                logging.info(f"Created directory: {self.save_dir}")
+                log.info(f"Created directory: {self.save_dir}")
             except PermissionError:
-                logging.error(f"ERROR: No permission to create directory {self.save_dir}")
+                log.error(f"ERROR: No permission to create directory {self.save_dir}")
                 raise
             except Exception as e:
-                logging.error(f"ERROR creating directory: {str(e)}")
+                log.error(f"ERROR creating directory: {str(e)}")
                 raise
 
     def get_frame(self):
         """Gets a frame from camera instance"""
-        ret, frame = self.cap.read()  # Get a frame
+        self.captured_frame = self.kinect.get_frame()  # Get a frame
 
-        if ret:
+        if self.captured_frame is not None:
             save_path = os.path.join(self.save_dir, "temp.jpg")
 
             try:
-                if cv2.imwrite(save_path, frame):
-                    return cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                if cv2.imwrite(save_path, self.captured_frame.getFrame(Frame.COLOR)):
+                    return cv2.cvtColor(self.captured_frame.getFrame(Frame.COLOR), cv2.COLOR_BGR2RGB)
                 else:
-                    logging.info(f"Failed to save image to {save_path}")
+                    log.info(f"Failed to save image to {save_path}")
             except PermissionError:
-                logging.error(f"ERROR: No permissions to write to: {save_path}")
+                log.error(f"ERROR: No permissions to write to: {save_path}")
             except Exception as e:
-                logging.error(f"ERROR saving image: {str(e)}")
+                log.error(f"ERROR saving image: {str(e)}")
 
         return None
 
     def release(self):
         """Stops video capture"""
-        self.cap.release()
+        self.kinect.stop()
 
-    def handle_captured(self, frame):
+    def handle_captured(self):
         """Handles a captured frame. Invokes face detection. If 6 are found, begins solving"""
         # Start with cleaning.
-        logging.info("Cleaning")
+        log.info("Cleaning")
 
         img_processor = ImageProcessor(os.path.join(self.save_dir, "temp.jpg"))
 
         clean, posit, size = img_processor.process()  # function call
         if not clean:
-            logging.warning("Cleaning failed")
+            log.warning("Cleaning failed")
             self.update_text("Taking image failed. Please try again.")
             return
 
         res = np.empty((3, 3), dtype=object)
 
-        # Get depth from kinect and merge
-        # Posit gets used for depth
+        # Get depth from stored kinect frame and merge
+        depth = self.captured_frame.getFrame(Frame.DEPTH)
 
         for i in range(3):
             for j in range(3):
-                res[i, j] = (size[i][j], None)
+                x, y = posit[i][j]
+                h, w = size[i][j]
+                depth = depth[i + h // 2, j + w //2]
+                res[i, j] = (size[i][j], depth)
 
         FaceData.add_data(size)
         self.update_text(f"Image {FaceData.get_size()} captured successfully")
 
         if FaceData.get_size() == 6:
-            logging.info("Enough data")
+            log.info("Enough data")
             self.update_text("All images captured")
 
             QTimer.singleShot(1000, self.handle_solve)  # Delay before solving
 
     def handle_solve(self):
         """Invokes cube solving with detected faces"""
-        logging.info("Solving")
+        log.info("Solving")
         self.update_text("Starting solving")
         self.update_button("Next solve")
 
@@ -93,7 +105,7 @@ class Camera(QObject):
 
         solver = Solver(data)
         solved_data = solver.solve()
-        logging.info(solved_data)  # debug
+        log.info(solved_data)  # debug
 
         SolveData.add_data(solved_data)
 
@@ -105,7 +117,6 @@ class Camera(QObject):
 
     def update_button(self, text):
         self.button_update_signal.emit(text)
-
 
 class SolveData:
     """Storage for solve data"""
@@ -153,3 +164,19 @@ class FaceData:
     @classmethod
     def get_size(cls):
         return len(cls.data)
+
+class Kinect:
+    """Kinect camera functionality"""
+    def __init__(self):
+       self.device = Device(getDefaultDeviceSerialNumber())
+       self.listener = FrameListener(Frame.COLOR, Frame.DEPTH)
+
+       self.device.setColorFrameListener(self.listener)
+       self.device.setDepthFrameListener(self.listener)
+    def start(self):
+        self.device.start()
+
+    def get_frame(self):
+        """Gets both RGB and Depth frame"""
+        return self.listener.waitForNewFrame()
+

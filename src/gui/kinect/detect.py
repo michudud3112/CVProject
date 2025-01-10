@@ -1,5 +1,5 @@
 import cv2
-from pyfreenect2 import PyFreeNect2 as Freenect, Freenect2Device as Device, getDefaultDeviceSerialNumber
+from pyfreenect2 import Freenect2Device as Device, getDefaultDeviceSerialNumber
 from pyfreenect2 import SyncMultiFrameListener as FrameListener, Frame
 import matplotlib.pyplot as plt
 # Initialize Kinect
