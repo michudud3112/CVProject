@@ -18,8 +18,7 @@ class labels:
         for i in range(3):
             for j in range(3):
                 for k in range(2):
-                    ratios[i][j][k] = self.grid[index][i][j][k] / \
-                        self.grid[index][2][2][k]  # scaling by the center
+                    ratios[i][j][k] = self.grid[index][i][j][k] / self.grid[index][2][2][k]  # scaling by the center
         self.grid[index] = ratios
 
     def ratios_to_labels(self):
