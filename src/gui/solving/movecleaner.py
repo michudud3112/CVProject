@@ -17,7 +17,7 @@ class movecleaner:
                 next += 1
 
             moves_cleaned.append(
-                move.move(self.cube.moves[pointer].direction, total % 4))
+                move(self.cube.moves[pointer].direction, total % 4))
             pointer += next
             next = 1
         self.cube.moves = moves_cleaned

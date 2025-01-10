@@ -19,7 +19,7 @@ dface = Face.face([[5, 6, 4], [6, 1, 3], [1, 6, 1]])
 
 #this is where the face are added to the cube. Preferrably change the variables above
 mycube = cube.cube(uface, lface, fface, rface, bface, dface, "", [])
-mysolver = solver.solver(mycube)
+mysolver = solver.Solver(mycube)
 mysolver.solve()
 print(mysolver.cube.solution)
 mycube.show_cube()

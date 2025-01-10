@@ -1,11 +1,11 @@
 class labels:
     #!!!important!!!
     #labels: 1 top, 2 left, 3 front, 5 right, 4 back, 6 bottom assuming smallest side on bottom
-    def __init__(self, grid, depth, alpha):
-        self.grid = grid
+    def __init__(self, cube, alpha):
+        self.grid = cube[0]
         self.alpha = alpha  # hyperparameter for error tolerance, recommend default 0.1
         self.cube_ratios = [1.625, 1.375, 0.875, 1.125, 0.625, 0.375]
-        self.depth = depth
+        self.depth = cube[1]
         self.labels =[[[0,0,0],[0,0,0],[0,0,0]],
                       [[0,0,0],[0,0,0],[0,0,0]],
                       [[0,0,0],[0,0,0],[0,0,0]],
