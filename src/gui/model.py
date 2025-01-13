@@ -91,28 +91,39 @@ class Camera(QObject):
         img_processor = ImageProcessor(os.path.join(self.save_dir, "temp.jpg"))
 
         clean, posit, size = img_processor.process()  # function call
-        if not clean:
-            log.warning("Cleaning failed")
-            self.update_text("Taking image failed. Please try again.")
-            return
+        #if not clean:
+        #    log.warning("Cleaning failed")
+        #    self.update_text("Taking image failed. Please try again.")
+        #    return
 
         res = np.empty((3, 3), dtype=object)
 
         # Get depth from stored kinect frame and merge
-        depth = self.captured_frame.getFrame(Frame.DEPTH)
+        depth_data = self.captured_frame.getFrame(Frame.DEPTH).getDepthData()
+        depth_data = np.fliplr(depth_data)  # Apply fliplr ONCE
+
+        res = np.empty((3, 3), dtype=object)  # Use object dtype to store tuples
 
         for i in range(3):
             for j in range(3):
                 x, y = posit[i][j]
                 h, w = size[i][j]
-                depth = depth[i + h // 2, j + w //2]
-                res[i, j] = (size[i][j], depth)
 
-        FaceData.add_data(size)
-        face_data_path = os.path.join(self.save_dir, "data.json")
-        with open(face_data_path, 'w') as f:
-            json.dump(FaceData.get_data(), f)
-        print(f"Face data written to {face_data_path}")
+                # Correctly extract the depth value using x and y:
+                # Handle potential out-of-bounds errors:
+                y_center = y - h // 2
+                x_center = x - w // 2
+
+                if 0 <= y_center < depth_data.shape[0] and 0 <= x_center < depth_data.shape[1]:
+                    depth_value = depth_data[y_center, x_center]
+                    res[i, j] = (size[i][j], depth_value)
+                else:
+                    print(
+                        f"Warning: Coordinates ({x_center}, {y_center}) are out of bounds for depth data shape {depth_data.shape}")
+                    res[i, j] = (size[i][j], -1)  # Or some default value
+
+        FaceData.add_data(res)
+        print(res)
 
         self.update_text(f"Image {FaceData.get_size()} captured successfully")
 
