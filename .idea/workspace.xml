@@ -5,306 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed798d65-d448-45e3-b0b1-aa0639c7b306" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CVProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CVProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/data/temp.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/COLLECT-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/PKG-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/main" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/main.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/warn-main.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/xref-main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/lib/libQt5Core.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/lib/libQt5DBus.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/lib/libQt5Gui.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/lib/libQt5Network.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/lib/libQt5Qml.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/lib/libQt5QmlModels.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/lib/libQt5Quick.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/lib/libQt5Svg.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/lib/libQt5WebSockets.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/lib/libQt5Widgets.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/lib/libQt5XcbQpa.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/lib/libicudata.so.56" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/lib/libicui18n.so.56" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/lib/libicuuc.so.56" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/generic/libqevdevkeyboardplugin.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/generic/libqevdevmouseplugin.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/generic/libqevdevtabletplugin.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/generic/libqevdevtouchplugin.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/generic/libqtuiotouchplugin.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/iconengines/libqsvgicon.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/imageformats/libqgif.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/imageformats/libqicns.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/imageformats/libqico.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/imageformats/libqjpeg.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/imageformats/libqsvg.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/imageformats/libqtga.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/imageformats/libqtiff.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/imageformats/libqwbmp.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/imageformats/libqwebp.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/platforminputcontexts/libibusplatforminputcontextplugin.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/platforms/libqlinuxfb.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/platforms/libqminimal.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/platforms/libqoffscreen.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/platforms/libqvnc.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/platforms/libqwebgl.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/platforms/libqxcb.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/platformthemes/libqxdgdesktopportal.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/plugins/xcbglintegrations/libqxcb-glx-integration.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_ar.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_bg.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_ca.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_cs.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_da.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_de.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_en.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_es.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_fa.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_fi.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_fr.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_gd.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_gl.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_he.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_ar.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_bg.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_ca.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_cs.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_da.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_de.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_en.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_es.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_fr.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_gl.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_hr.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_hu.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_it.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_ja.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_ko.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_nl.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_nn.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_pl.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_pt_BR.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_ru.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_sk.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_sl.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_tr.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_uk.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_zh_CN.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_help_zh_TW.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_hr.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_hu.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_it.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_ja.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_ko.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_lt.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_lv.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_nl.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_nn.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_pl.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_pt_BR.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_pt_PT.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_ru.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_sk.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_sl.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_sv.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_tr.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_uk.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_zh_CN.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qt_zh_TW.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_ar.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_bg.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_ca.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_cs.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_da.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_de.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_en.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_es.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_fa.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_fi.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_fr.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_gd.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_he.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_hr.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_hu.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_it.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_ja.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_ko.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_lv.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_nl.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_nn.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_pl.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_pt_BR.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_ru.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_sk.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_tr.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_uk.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_zh_CN.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/Qt5/translations/qtbase_zh_TW.qm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/QtCore.abi3.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/QtGui.abi3.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/QtWidgets.abi3.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/PyQt5/sip.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/cv2/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/cv2/config-3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/cv2/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/cv2/cv2.abi3.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/cv2/data/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/cv2/gapi/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/cv2/load_config_py3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/cv2/mat_wrapper/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/cv2/misc/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/cv2/misc/version.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/cv2/typing/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/cv2/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/cv2/version.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/imgs/temp.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_asyncio.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_bz2.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_codecs_cn.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_codecs_hk.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_codecs_iso2022.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_codecs_jp.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_codecs_kr.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_codecs_tw.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_contextvars.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_ctypes.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_decimal.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_hashlib.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_json.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_lzma.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_multibytecodec.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_multiprocessing.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_posixshmem.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_queue.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/_ssl.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/mmap.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/readline.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/resource.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/lib-dynload/termios.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libQt5Core.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libQt5DBus.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libQt5Gui.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libQt5Network.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libQt5Qml.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libQt5QmlModels.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libQt5Quick.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libQt5Svg.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libQt5WebSockets.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libQt5Widgets.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libQt5XcbQpa.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libX11-xcb.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libX11.so.6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libXau.so.6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libXdmcp.so.6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libXext.so.6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libavcodec-9aae324f.so.59.37.100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libavformat-3ff1be5b.so.59.27.100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libavutil-a0a0531e.so.57.28.100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libbrotlicommon.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libbrotlidec.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libbsd.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libbz2.so.1.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libcap.so.2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libcom_err.so.2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libcrypto-337dac8b.so.1.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libcrypto.so.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libdbus-1.so.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libexpat.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libffi.so.8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libfontconfig.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libfreetype.so.6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libgcc_s.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libgcrypt.so.20" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libgfortran-040039e1-0352e75f.so.5.0.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libgfortran-91cc3cb1.so.3.0.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libglib-2.0.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libgpg-error.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libgssapi_krb5.so.2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libgthread-2.0.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libicudata.so.56" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libicui18n.so.56" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libicuuc.so.56" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libk5crypto.so.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libkeyutils.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libkrb5.so.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libkrb5support.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/liblz4.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/liblzma.so.5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libmd.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libopenblas-r0-f650aae0.3.3.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libpcre2-8.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libpng16-1bde1c40.so.16.43.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libpng16.so.16" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libpython3.12.so.1.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libquadmath-96973f99-934c22de.so.0.0.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libquadmath-96973f99.so.0.0.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libreadline.so.8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libscipy_openblas64_-6bb31eeb.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libssl-28bef1ac.so.1.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libssl.so.3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libstdc++.so.6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libswresample-2ec4394e.so.4.7.100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libswscale-2c3c8be7.so.6.7.100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libsystemd.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libtinfo.so.6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libvpx-c3a7933e.so.9.0.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxcb-glx.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxcb-icccm.so.4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxcb-image.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxcb-keysyms.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxcb-randr.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxcb-render-util.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxcb-render.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxcb-shape.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxcb-shm.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxcb-sync.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxcb-util.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxcb-xfixes.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxcb-xinerama.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxcb-xkb.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxkbcommon-x11.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libxkbcommon.so.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libz.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/libzstd.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy.libs/libgfortran-040039e1-0352e75f.so.5.0.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy.libs/libquadmath-96973f99-934c22de.so.0.0.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy.libs/libscipy_openblas64_-6bb31eeb.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy/_core/_multiarray_tests.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy/_core/_multiarray_umath.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy/fft/_pocketfft_umath.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy/linalg/_umath_linalg.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy/random/_bounded_integers.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy/random/_common.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy/random/_generator.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy/random/_mt19937.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy/random/_pcg64.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy/random/_philox.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy/random/_sfc64.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy/random/bit_generator.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/numpy/random/mtrand.cpython-312-x86_64-linux-gnu.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/opencv_python_headless.libs/libavcodec-9aae324f.so.59.37.100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/opencv_python_headless.libs/libavformat-3ff1be5b.so.59.27.100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/opencv_python_headless.libs/libavutil-a0a0531e.so.57.28.100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/opencv_python_headless.libs/libcrypto-337dac8b.so.1.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/opencv_python_headless.libs/libgfortran-91cc3cb1.so.3.0.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/opencv_python_headless.libs/libopenblas-r0-f650aae0.3.3.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/opencv_python_headless.libs/libpng16-1bde1c40.so.16.43.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/opencv_python_headless.libs/libquadmath-96973f99.so.0.0.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/opencv_python_headless.libs/libssl-28bef1ac.so.1.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/opencv_python_headless.libs/libswresample-2ec4394e.so.4.7.100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/opencv_python_headless.libs/libswscale-2c3c8be7.so.6.7.100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/_internal/opencv_python_headless.libs/libvpx-c3a7933e.so.9.0.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main/main" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.spec" beforeDir="false" afterPath="$PROJECT_DIR$/main.spec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/solving/solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/solving/solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/cleaning/mask.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cleaning/mask.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/cleaning/samples/res.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cleaning/samples/res.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/cleaning/samples/res2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cleaning/samples/res2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/cleaning/samples/wall.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cleaning/samples/wall.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/imgs/temp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -435,6 +145,10 @@
       <workItem from="1736188164552" duration="9155000" />
       <workItem from="1736314218700" duration="3139000" />
       <workItem from="1736508186929" duration="7462000" />
+      <workItem from="1736761208743" duration="4910000" />
+      <workItem from="1736767356143" duration="2741000" />
+      <workItem from="1736777154317" duration="2446000" />
+      <workItem from="1736780703556" duration="2905000" />
     </task>
     <servers />
   </component>
@@ -454,7 +168,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CVProject$view.coverage" NAME="view Coverage Results" MODIFIED="1735398397283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/gui" />
-    <SUITE FILE_PATH="coverage/CVProject$gui.coverage" NAME="gui Coverage Results" MODIFIED="1736514501039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/CVProject$gui.coverage" NAME="gui Coverage Results" MODIFIED="1736783608255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/CVProject$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1735398336723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/gui" />
     <SUITE FILE_PATH="coverage/CVProject$test.coverage" NAME="test Coverage Results" MODIFIED="1732718936425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/kinect" />
     <SUITE FILE_PATH="coverage/CVProject$viewer.coverage" NAME="viewer Coverage Results" MODIFIED="1732047530505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Computer Vision Project/perception" />

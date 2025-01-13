@@ -1,1 +1,6 @@
-Rectangle: x=122, y=345, width=104, height=14
+Rectangle: x=97, y=86, width=69, height=59
+Rectangle: x=213, y=87, width=22, height=60
+Rectangle: x=97, y=148, width=68, height=44
+Rectangle: x=167, y=150, width=44, height=44
+Rectangle: x=98, y=196, width=67, height=28
+Rectangle: x=169, y=197, width=43, height=30

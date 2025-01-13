@@ -5,6 +5,7 @@ from .rectangle import process_image
 from .info import gather_info
 from .sort import process_coordinates
 
+
 class ImageProcessor:
     def __init__(self, image_path):
         self.image_path = image_path
@@ -15,18 +16,18 @@ class ImageProcessor:
         self.rectangles = []
         self.save_dir = os.path.join(os.path.dirname(__file__), "samples")
 
-    def create_gold_mask(self, lower_gold, upper_gold):
-        gold_mask = cv2.inRange(self.hsv, lower_gold, upper_gold)
+    def create_white_mask(self, lower_white, upper_white):
+        white_mask = cv2.inRange(self.hsv, lower_white, upper_white)
         kernel = np.ones((5, 5), np.uint8)
-        self.mask = cv2.morphologyEx(gold_mask, cv2.MORPH_CLOSE, kernel)
+        self.mask = cv2.morphologyEx(white_mask, cv2.MORPH_CLOSE, kernel)
 
     def detect_rectangles(self):
         gray = cv2.cvtColor(self.image, cv2.COLOR_BGR2GRAY)
         blurred = cv2.GaussianBlur(gray, (5, 5), 0)
         edges = cv2.Canny(blurred, 50, 150)
-        
+
         contours, _ = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        
+
         for contour in contours:
             epsilon = 0.02 * cv2.arcLength(contour, True)
             approx = cv2.approxPolyDP(contour, epsilon, True)
@@ -67,25 +68,24 @@ class ImageProcessor:
 
         process_image(intermediate_path, final_path)
         gather_info(final_path)
-        
-        x_y_matrix, width_height_matrix = process_coordinates(wall_text, final_path, 
-                                                            os.path.join(self.save_dir, "res3.jpg"), 
-                                                            sorted_wall_text)
+
+        x_y_matrix, width_height_matrix = process_coordinates(wall_text, final_path,
+                                                              os.path.join(self.save_dir, "res3.jpg"),
+                                                              sorted_wall_text)
         is_correct = len(x_y_matrix) == 9
 
         return is_correct, x_y_matrix, width_height_matrix
 
-
     def process(self):
-        lower_gold = np.array([10, 100, 40])
-        upper_gold = np.array([65, 255, 255])
+        lower_white = np.array([0, 0, 200])
+        upper_white = np.array([180, 55, 255])
 
-        self.create_gold_mask(lower_gold, upper_gold)
+        self.create_white_mask(lower_white, upper_white)
         self.detect_rectangles()
 
         if not self.apply_masks_and_save(os.path.join(self.save_dir, "res.jpg")):
             return False, None, None
-        
+
         is_correct, x_y_matrix, width_height_matrix = self.process_additional_steps(
             os.path.join(self.save_dir, "res.jpg"),
             os.path.join(self.save_dir, "res2.jpg"),
